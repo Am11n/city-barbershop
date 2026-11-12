@@ -1,89 +1,87 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { useBooking } from '../context/BookingContext';
+
+const navItems = [
+    { name: 'Tjenester', href: '#tjenester' },
+    { name: 'Barberne', href: '#team' },
+    { name: 'Booking', href: '#booking' },
+    { name: 'Finn oss', href: '#kontakt' },
+];
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const { openBooking } = useBooking();
 
-    const navItems = [
-        { name: 'Hjem', href: '#hero' },
-        { name: 'Tjenester', href: '#services' },
-        { name: 'Team', href: '#team' },
-        { name: 'Kontakt', href: '#contact' },
-    ];
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return (
-        <header className="fixed w-full top-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
-                    {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center gap-3 z-20">
-                        <div className="hidden sm:block w-8 h-[1px] bg-white/50"></div>
-                        <a href="#" className="flex items-center">
-                            <img src="/logo.png" alt="City Barbershop Logo" className="h-10 w-auto" />
-                        </a>
-                        <div className="hidden sm:block w-8 h-[1px] bg-white/50"></div>
-                    </div>
+        <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+            <div
+                className={`mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border px-3 pl-4 transition-all duration-500 sm:px-4 sm:pl-5 ${scrolled || isOpen
+                    ? 'border-white/10 bg-ink/75 shadow-2xl shadow-black/40 backdrop-blur-xl'
+                    : 'border-transparent bg-transparent'
+                    }`}
+            >
+                <a href="#top" className="flex items-center gap-3" aria-label="City Barbershop, til toppen">
+                    <img src="/logo.png" alt="" className="h-10 w-10 rounded-full object-cover ring-1 ring-white/15" />
+                    <span className="font-display text-xl uppercase leading-none tracking-wide">
+                        City <span className="text-pole">Barbershop</span>
+                    </span>
+                </a>
 
-                    {/* Desktop Menu - Centered */}
-                    <nav className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-8 items-center">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="text-white hover:text-accent transition-colors duration-200 text-sm uppercase tracking-widest font-medium"
-                            >
-                                {item.name}
-                            </a>
-                        ))}
-                    </nav>
-
-                    {/* Right Section: CTA & Mobile Toggle */}
-                    <div className="flex items-center gap-4 z-20">
+                <nav className="hidden items-center gap-1 md:flex" aria-label="Hovedmeny">
+                    {navItems.map((item) => (
                         <a
-                            href="#book"
-                            className="hidden md:block bg-accent hover:bg-accent-hover text-white px-6 py-2.5 rounded-sm font-bold uppercase tracking-wide text-sm transition-all transform hover:scale-105 border border-accent"
+                            key={item.name}
+                            href={item.href}
+                            className="rounded-full px-4 py-2 text-sm font-medium text-bone/70 transition-colors hover:bg-white/5 hover:text-bone"
                         >
-                            Bestill Time
+                            {item.name}
                         </a>
+                    ))}
+                </nav>
 
-                        {/* Mobile Menu Button */}
-                        <div className="md:hidden flex items-center">
-                            <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="text-white hover:text-accent focus:outline-none"
-                                aria-label="Toggle menu"
-                            >
-                                {isOpen ? <X size={28} /> : <Menu size={28} />}
-                            </button>
-                        </div>
-                    </div>
+                <div className="flex items-center gap-2">
+                    <button onClick={openBooking} className="btn-primary hidden px-5 py-2.5 sm:inline-flex">
+                        Book time <ArrowUpRight className="h-4 w-4" />
+                    </button>
+                    <button
+                        className="grid h-11 w-11 place-items-center rounded-full border border-white/10 md:hidden"
+                        onClick={() => setIsOpen((v) => !v)}
+                        aria-label={isOpen ? 'Lukk meny' : 'Åpne meny'}
+                        aria-expanded={isOpen}
+                    >
+                        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                    </button>
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden bg-secondary border-b border-white/10">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="block px-3 py-2 text-base font-medium text-white hover:text-accent hover:bg-white/5 rounded-md"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {item.name}
-                            </a>
-                        ))}
+            {/* Mobile menu */}
+            <div
+                className={`mx-auto mt-2 max-w-7xl overflow-hidden rounded-3xl border border-white/10 bg-ink/90 backdrop-blur-xl transition-all duration-500 md:hidden ${isOpen ? 'max-h-96 opacity-100' : 'pointer-events-none max-h-0 opacity-0'
+                    }`}
+            >
+                <nav className="flex flex-col p-3" aria-label="Mobilmeny">
+                    {navItems.map((item) => (
                         <a
-                            href="#book"
-                            className="block w-full text-center mt-4 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-sm font-bold uppercase tracking-wide"
+                            key={item.name}
+                            href={item.href}
                             onClick={() => setIsOpen(false)}
+                            className="flex items-center justify-between rounded-2xl px-4 py-4 font-display text-2xl uppercase tracking-wide hover:bg-white/5"
                         >
-                            Bestill Time
+                            {item.name}
+                            <ArrowUpRight className="h-5 w-5 text-mute" />
                         </a>
-                    </div>
-                </div>
-            )}
+                    ))}
+                </nav>
+            </div>
         </header>
     );
 }

@@ -1,25 +1,39 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Marquee from './components/Marquee';
 import Services from './components/Services';
 import Team from './components/Team';
+import Booking from './components/Booking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
+import BookingDrawer from './components/BookingDrawer';
+import MobileBookBar from './components/MobileBookBar';
+import { BookingProvider } from './context/BookingContext';
+import useReveal from './hooks/useReveal';
 
 function App() {
+  useReveal();
+
   return (
-    <div className="bg-primary min-h-screen text-text font-sans selection:bg-accent selection:text-white">
-      <SEO />
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <Team />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  )
+    <BookingProvider>
+      <div className="min-h-screen bg-ink text-bone">
+        <SEO />
+        <Header />
+        <main>
+          <Hero />
+          <Marquee />
+          <Services />
+          <Team />
+          <Booking />
+          <Contact />
+        </main>
+        <Footer />
+        <MobileBookBar />
+        <BookingDrawer />
+      </div>
+    </BookingProvider>
+  );
 }
 
-export default App
+export default App;

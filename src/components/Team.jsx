@@ -1,49 +1,70 @@
-import { team } from '../data/team';
-import { Instagram } from 'lucide-react';
+import { ArrowUpRight, Instagram } from 'lucide-react';
+import { team, gallery } from '../data/team';
+import { useBooking } from '../context/BookingContext';
 
 export default function Team() {
+    const { openBooking } = useBooking();
+
     return (
-        <section id="team" className="py-24 bg-primary">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide">
-                        Møt <span className="text-accent">Teamet</span>
-                    </h2>
-                    <div className="w-20 h-1 bg-accent mx-auto"></div>
+        <section id="team" className="relative overflow-hidden bg-coal py-24 sm:py-32">
+            <div className="container-x">
+                <div className="reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+                    <div>
+                        <span className="eyebrow"><span className="h-px w-8 bg-pole" /> Barberne</span>
+                        <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
+                            Stolene <br className="hidden sm:block" />
+                            <span className="font-serif normal-case italic text-pole">og</span> hendene.
+                        </h2>
+                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="btn-ghost self-start sm:self-auto">
+                        <Instagram className="h-4 w-4" /> Følg på Instagram
+                    </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    {team.map((member) => (
-                        <article key={member.id} className="group">
-                            <div className="relative overflow-hidden mb-6 rounded-sm aspect-[3/4]">
-                                <img
-                                    src={member.image}
-                                    alt={member.name}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    loading="lazy"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                                    <a
-                                        href={member.instagram}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white hover:text-accent transition-colors"
-                                        aria-label={`Follow ${member.name} on Instagram`}
-                                    >
-                                        <Instagram size={24} />
-                                    </a>
+                <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {team.map((m, i) => (
+                        <article
+                            key={m.id}
+                            className="reveal group relative aspect-[4/5] overflow-hidden rounded-3xl bg-steel"
+                            style={{ transitionDelay: `${i * 90}ms` }}
+                        >
+                            <img
+                                src={m.image}
+                                alt={`${m.name}, ${m.role}`}
+                                loading="lazy"
+                                className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+                                <div>
+                                    <p className="text-xs uppercase tracking-[0.2em] text-pole">{m.role}</p>
+                                    <h3 className="mt-1 font-display text-4xl uppercase">{m.name}</h3>
+                                    <p className="mt-1 text-sm text-bone/70">{m.specialty}</p>
                                 </div>
-                            </div>
-                            <div className="text-center">
-                                <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                                <p className="text-accent text-sm font-medium uppercase tracking-wider mb-3">{member.role}</p>
-                                <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
-                                    {member.bio}
-                                </p>
+                                <button
+                                    onClick={openBooking}
+                                    aria-label={`Book time hos ${m.name}`}
+                                    className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-bone text-ink transition-all group-hover:bg-pole group-hover:text-white"
+                                >
+                                    <ArrowUpRight className="h-5 w-5" />
+                                </button>
                             </div>
                         </article>
                     ))}
                 </div>
+            </div>
+
+            {/* Gallery strip */}
+            <div className="reveal mt-20 flex gap-4 overflow-x-auto px-4 pb-2 sm:px-6 lg:px-8 [scrollbar-width:none]">
+                {gallery.map((src, i) => (
+                    <img
+                        key={src}
+                        src={src}
+                        alt={`Arbeid fra City Barbershop ${i + 1}`}
+                        loading="lazy"
+                        className={`h-64 w-52 shrink-0 rounded-2xl object-cover sm:h-80 sm:w-64 ${i % 2 ? 'sm:mt-10' : ''}`}
+                    />
+                ))}
             </div>
         </section>
     );

@@ -1,30 +1,46 @@
+// Prototype prices — the live prices come from TeqBook in the booking flow.
 export const services = [
     {
-        id: 1,
-        name: "Hårklipp",
-        description: "Klassisk klipp med saks og maskin, inkludert vask og styling.",
-        price: "590,-",
-        duration: "30 min"
+        id: 'klipp',
+        name: 'Herreklipp',
+        description: 'Klipp med saks og maskin, vask og styling. Tilpasset hodeform og hverdag.',
+        price: 490,
+        duration: 30,
     },
     {
-        id: 2,
-        name: "Skjeggtrim",
-        description: "Forming av skjegg med maskin og saks, inkludert olje.",
-        price: "390,-",
-        duration: "20 min"
+        id: 'fade',
+        name: 'Skin Fade',
+        description: 'Ren overgang helt ned til huden. Finish med kniv langs linjene.',
+        price: 550,
+        duration: 45,
+        popular: true,
     },
     {
-        id: 3,
-        name: "Full pakke",
-        description: "Hårklipp og skjeggtrim med hot towel behandling.",
-        price: "890,-",
-        duration: "60 min"
+        id: 'skjegg',
+        name: 'Skjeggtrim',
+        description: 'Forming med maskin og saks, varmt håndkle og skjeggolje.',
+        price: 350,
+        duration: 20,
     },
     {
-        id: 4,
-        name: "Skin Fade",
-        description: "Presis fade helt ned til huden, utført med kniv.",
-        price: "650,-",
-        duration: "45 min"
-    }
+        id: 'combo',
+        name: 'Klipp + skjegg',
+        description: 'Hele pakken: fade eller klipp, skjeggtrim og hot towel.',
+        price: 790,
+        duration: 60,
+    },
+    {
+        id: 'barn',
+        name: 'Barneklipp',
+        description: 'For gutter under 12 år. Rolig tempo, samme presisjon.',
+        price: 350,
+        duration: 25,
+    },
+    {
+        id: 'barbering',
+        name: 'Klassisk barbering',
+        description: 'Kniv, varme håndklær og balsam. Gammeldags, på den gode måten.',
+        price: 450,
+        duration: 30,
+    },
 ];
