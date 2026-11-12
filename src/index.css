@@ -3,7 +3,72 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-primary text-text font-sans antialiased;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
   }
+
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-pole text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-mute;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-pole px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-pole-dark active:scale-[.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-bone/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-bone backdrop-blur transition-all hover:border-white/40 hover:bg-white/[0.07];
+  }
+
+  /* Diagonal red / white / blue stripes, like the poles in the logo */
+  .pole-stripes {
+    background-image: repeating-linear-gradient(-45deg,
+        #e0262f 0 10px,
+        #f4efe6 10px 20px,
+        #1f3a8a 20px 30px,
+        #f4efe6 30px 40px);
+    background-size: 56px 56px;
+  }
+
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+}
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-marquee, .animate-pole, .animate-rise { animation: none !important; }
 }

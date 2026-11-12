@@ -1,42 +1,64 @@
+import { ArrowUpRight, Clock } from 'lucide-react';
 import { services } from '../data/services';
+import { useBooking } from '../context/BookingContext';
+import { useLang } from '../i18n/LanguageContext';
 
 export default function Services() {
+    const { openBooking } = useBooking();
+    const { t, L } = useLang();
+
     return (
-        <section id="services" className="py-24 bg-secondary">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide">
-                        Våre <span className="text-accent">Tjenester</span>
-                    </h2>
-                    <div className="w-20 h-1 bg-accent mx-auto"></div>
+        <section id="tjenester" className="py-24 sm:py-32">
+            <div className="container-x">
+                <div className="reveal grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
+                    <div>
+                        <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('services.eyebrow')}</span>
+                        <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
+                            {t('services.h1')} <span className="font-serif normal-case italic text-pole">{t('services.h2')}</span> {t('services.h3')}
+                        </h2>
+                    </div>
+                    <p className="max-w-md text-bone/65 lg:justify-self-end">{t('services.lead')}</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    {services.map((service) => (
-                        <article
-                            key={service.id}
-                            className="bg-primary p-8 rounded-sm border border-white/5 hover:border-accent/30 transition-colors group"
-                        >
-                            <div className="flex justify-between items-start mb-4">
-                                <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">
-                                    {service.name}
-                                </h3>
-                                <span className="text-accent font-bold text-lg">
-                                    {service.price}
+                <ul className="mt-14 divide-y divide-white/10 border-y border-white/10">
+                    {services.map((s, i) => (
+                        <li key={s.id} className="reveal" style={{ transitionDelay: `${i * 50}ms` }}>
+                            <button
+                                onClick={openBooking}
+                                className="group grid w-full grid-cols-[1fr_auto] items-center gap-4 py-7 text-left transition-colors sm:grid-cols-[3rem_1fr_auto_auto] sm:gap-8"
+                            >
+                                <span className="hidden font-display text-lg text-mute sm:block">{String(i + 1).padStart(2, '0')}</span>
+                                <span>
+                                    <span className="flex flex-wrap items-center gap-3">
+                                        <span className="font-display text-3xl uppercase tracking-wide transition-colors group-hover:text-pole sm:text-4xl">
+                                            {L(s.name)}
+                                        </span>
+                                        {s.popular && (
+                                            <span className="rounded-full bg-pole/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-pole">
+                                                {t('services.popular')}
+                                            </span>
+                                        )}
+                                    </span>
+                                    <span className="mt-2 block max-w-xl text-sm text-bone/60">{L(s.description)}</span>
+                                    <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-mute sm:hidden">
+                                        <Clock className="h-3.5 w-3.5" /> {s.duration} {t('services.min')}
+                                    </span>
                                 </span>
-                            </div>
-                            <p className="text-gray-400 mb-4 leading-relaxed">
-                                {service.description}
-                            </p>
-                            <div className="flex items-center text-sm text-gray-500">
-                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                {service.duration}
-                            </div>
-                        </article>
+                                <span className="hidden items-center gap-1.5 text-sm text-mute sm:inline-flex">
+                                    <Clock className="h-4 w-4" /> {s.duration} {t('services.min')}
+                                </span>
+                                <span className="flex items-center gap-4">
+                                    <span className="font-display text-3xl sm:text-4xl">
+                                        {s.price}<span className="ml-1 text-base text-mute">{t('services.currency')}</span>
+                                    </span>
+                                    <span className="hidden h-12 w-12 place-items-center rounded-full border border-white/15 transition-all group-hover:rotate-45 group-hover:border-pole group-hover:bg-pole sm:grid">
+                                        <ArrowUpRight className="h-5 w-5" />
+                                    </span>
+                                </span>
+                            </button>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     );
