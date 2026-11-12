@@ -11,8 +11,8 @@ function initialLang() {
         const saved = localStorage.getItem('cb-lang');
         if (SUPPORTED.includes(saved)) return saved;
     } catch { /* storage blocked */ }
-    const nav = (navigator.language || 'no').toLowerCase();
-    return /^(nb|nn|no)/.test(nav) ? 'no' : 'en';
+    // Norwegian by default; English only when chosen (toggle or ?lang=en).
+    return 'no';
 }
 
 export function LanguageProvider({ children }) {
