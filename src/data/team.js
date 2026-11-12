@@ -46,5 +46,6 @@ export const fmtTime = (h) =>
 export const google = {
     rating: 5.0,
     count: 22,
-    mapsUrl: 'https://www.google.com/maps/place/City+Barbershop+Drammen/@59.7385893,10.2046242,17z/data=!4m6!3m5!1s0x46413d495aa6d0c9:0x1123982b6a359228!8m2!3d59.7385893!4d10.2046242',
+    // CID link: always opens the Google business profile directly.
+    mapsUrl: 'https://maps.google.com/?cid=1234998035062559272',
 };
