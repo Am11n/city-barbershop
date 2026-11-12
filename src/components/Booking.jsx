@@ -42,7 +42,7 @@ export default function Booking() {
                     </ul>
                 </div>
 
-                <div className="reveal">
+                <div className="reveal min-w-0">
                     <div className="rounded-[2rem] border border-white/10 bg-steel/80 p-2 shadow-2xl shadow-black/50">
                         {/* Browser-style chrome so it reads as "live system" in the demo */}
                         <div className="flex items-center justify-between gap-3 px-4 py-3">
