@@ -30,11 +30,13 @@ export default {
         marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
         pole: { from: { backgroundPosition: '0 0' }, to: { backgroundPosition: '0 56px' } },
         rise: { from: { opacity: 0, transform: 'translateY(24px)' }, to: { opacity: 1, transform: 'none' } },
+        grow: { from: { transform: 'scaleX(0)' }, to: { transform: 'scaleX(1)' } },
       },
       animation: {
         marquee: 'marquee 32s linear infinite',
         pole: 'pole 1.4s linear infinite',
         rise: 'rise .9s cubic-bezier(.2,.7,.2,1) both',
+        grow: 'grow 1.1s cubic-bezier(.2,.7,.2,1) both',
       },
     },
   },

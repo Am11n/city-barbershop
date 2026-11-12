@@ -5,7 +5,7 @@ import { useBooking } from '../context/BookingContext';
 const navItems = [
     { name: 'Tjenester', href: '#tjenester' },
     { name: 'Barberne', href: '#team' },
-    { name: 'Booking', href: '#booking' },
+    { name: 'City Club', href: '#club' },
     { name: 'Finn oss', href: '#kontakt' },
 ];
 

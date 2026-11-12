@@ -1,34 +1,36 @@
 // Placeholder team — swap in the real barbers, photos and Instagram handles.
+const img = (id) => `https://images.unsplash.com/${id}?w=900&h=1125&auto=format&fit=crop&crop=faces&q=70`;
+
 export const team = [
     {
         id: 1,
         name: 'Abdull',
         role: 'Eier & master barber',
         specialty: 'Fades · Kniv',
-        image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&auto=format&fit=crop&q=70',
+        image: img('photo-1612214070442-3c806a722f0b'),
     },
     {
         id: 2,
         name: 'Yoel',
         role: 'Senior barber',
         specialty: 'Skjegg · Teksturklipp',
-        image: 'https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=900&auto=format&fit=crop&q=70',
+        image: img('photo-1768591981032-4a251b865ad2'),
     },
     {
         id: 3,
         name: 'Ahmed',
         role: 'Barber',
         specialty: 'Klassisk klipp · Barn',
-        image: 'https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?w=900&auto=format&fit=crop&q=70',
+        image: img('photo-1563721572772-fbf713fff374'),
     },
 ];
 
 export const gallery = [
-    'https://images.unsplash.com/photo-1512690459411-b9245aed614b?w=900&auto=format&fit=crop&q=70',
+    'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=900&auto=format&fit=crop&q=70',
+    'https://images.unsplash.com/photo-1717089256239-dc2ed4d9dfc6?w=900&auto=format&fit=crop&q=70',
     'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&auto=format&fit=crop&q=70',
+    'https://images.unsplash.com/photo-1686671805337-7d8aa64b965f?w=900&auto=format&fit=crop&q=70',
+    'https://images.unsplash.com/photo-1653758265969-b048bb0b328a?w=900&auto=format&fit=crop&q=70',
 ];
 
 export const hours = [

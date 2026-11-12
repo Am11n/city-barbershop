@@ -11,6 +11,10 @@ import BookingDrawer from './components/BookingDrawer';
 import MobileBookBar from './components/MobileBookBar';
 import { BookingProvider } from './context/BookingContext';
 import useReveal from './hooks/useReveal';
+import Intro from './components/Intro';
+import Experience from './components/Experience';
+import Membership from './components/Membership';
+import Faq from './components/Faq';
 
 function App() {
   useReveal();
@@ -18,14 +22,18 @@ function App() {
   return (
     <BookingProvider>
       <div className="min-h-screen bg-ink text-bone">
+        <Intro />
         <SEO />
         <Header />
         <main>
           <Hero />
           <Marquee />
           <Services />
+          <Experience />
           <Team />
+          <Membership />
           <Booking />
+          <Faq />
           <Contact />
         </main>
         <Footer />

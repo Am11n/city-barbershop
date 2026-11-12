@@ -1,9 +1,10 @@
 import { Helmet } from 'react-helmet-async';
+import { faqs } from './Faq';
 
 export default function SEO() {
     const schema = {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "BarberShop",
         "name": "City Barbershop",
         "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70",
         "telephone": "+4746865541",
@@ -37,12 +38,25 @@ export default function SEO() {
         "priceRange": "$$"
     };
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((f) => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a },
+        })),
+    };
+
     return (
         <Helmet>
-            <title>City Barbershop - Premium Frisør i Drammen</title>
+            <title>City Barbershop | Barber i Drammen sentrum</title>
             <meta name="description" content="City Barbershop tilbyr klassisk barbering, hårklipp og skjeggtrim i hjertet av Drammen. Bestill time i dag for en premium opplevelse." />
             <script type="application/ld+json">
                 {JSON.stringify(schema)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(faqSchema)}
             </script>
         </Helmet>
     );
