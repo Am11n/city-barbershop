@@ -46,16 +46,16 @@ export default function Booking() {
                     <div className="rounded-[2rem] border border-white/10 bg-steel/80 p-2 shadow-2xl shadow-black/50">
                         {/* Browser-style chrome so it reads as "live system" in the demo */}
                         <div className="flex items-center justify-between gap-3 px-4 py-3">
-                            <div className="flex gap-1.5">
+                            <div className="flex shrink-0 gap-1.5">
                                 <span className="h-3 w-3 rounded-full bg-pole" />
                                 <span className="h-3 w-3 rounded-full bg-bone/30" />
                                 <span className="h-3 w-3 rounded-full bg-navy" />
                             </div>
-                            <span className="truncate rounded-full bg-ink/60 px-3 py-1 text-[11px] text-mute">
+                            <span className="min-w-0 truncate rounded-full bg-ink/60 px-3 py-1 text-[11px] text-mute">
                                 {BOOKING_URL.replace('https://', '')}
                             </span>
                             {IS_STAGING ? (
-                                <span className="rounded-full bg-amber-400/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-amber-300">
+                                <span className="shrink-0 rounded-full bg-amber-400/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-amber-300">
                                     Demo
                                 </span>
                             ) : (
