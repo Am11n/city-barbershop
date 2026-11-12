@@ -1,26 +1,26 @@
-// Placeholder team — swap in the real barbers, photos and Instagram handles.
+// Placeholder team photos — swap in real photos and Instagram handles.
 const img = (id) => `https://images.unsplash.com/${id}?w=900&h=1125&auto=format&fit=crop&crop=faces&q=70`;
 
 export const team = [
     {
         id: 1,
         name: 'Abdull',
-        role: 'Eier & master barber',
-        specialty: 'Fades · Kniv',
+        role: { no: 'Eier & master barber', en: 'Owner & master barber' },
+        specialty: { no: 'Fades · Kniv', en: 'Fades · Razor work' },
         image: img('photo-1612214070442-3c806a722f0b'),
     },
     {
         id: 2,
         name: 'Yoel',
-        role: 'Senior barber',
-        specialty: 'Skjegg · Teksturklipp',
+        role: { no: 'Senior barber', en: 'Senior barber' },
+        specialty: { no: 'Skjegg · Teksturklipp', en: 'Beards · Textured cuts' },
         image: img('photo-1768591981032-4a251b865ad2'),
     },
     {
         id: 3,
         name: 'Ahmed',
-        role: 'Barber',
-        specialty: 'Klassisk klipp · Barn',
+        role: { no: 'Barber', en: 'Barber' },
+        specialty: { no: 'Klassisk klipp · Barn', en: 'Classic cuts · Kids' },
         image: img('photo-1563721572772-fbf713fff374'),
     },
 ];
@@ -33,8 +33,18 @@ export const gallery = [
     'https://images.unsplash.com/photo-1653758265969-b048bb0b328a?w=900&auto=format&fit=crop&q=70',
 ];
 
+// Opening hours as listed on Google Maps (Nov 2026). Times are decimal hours.
 export const hours = [
-    { day: 'Mandag – fredag', time: '10:00 – 19:00', days: [1, 2, 3, 4, 5], open: 10, close: 19 },
-    { day: 'Lørdag', time: '10:00 – 16:00', days: [6], open: 10, close: 16 },
-    { day: 'Søndag', time: 'Stengt', days: [0] },
+    { day: { no: 'Mandag – lørdag', en: 'Monday – Saturday' }, days: [1, 2, 3, 4, 5, 6], open: 10.5, close: 19 },
+    { day: { no: 'Søndag', en: 'Sunday' }, days: [0] },
 ];
+
+export const fmtTime = (h) =>
+    `${String(Math.floor(h)).padStart(2, '0')}:${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
+
+// Public Google Business profile data (from Google Maps, Nov 2026)
+export const google = {
+    rating: 5.0,
+    count: 22,
+    mapsUrl: 'https://www.google.com/maps/place/City+Barbershop+Drammen/@59.7385893,10.2046242,17z/data=!4m6!3m5!1s0x46413d495aa6d0c9:0x1123982b6a359228!8m2!3d59.7385893!4d10.2046242',
+};

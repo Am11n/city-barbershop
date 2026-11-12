@@ -1,34 +1,38 @@
 import { useEffect, useState } from 'react';
-import { hours } from '../data/team';
+import { hours, fmtTime } from '../data/team';
+import { useLang } from '../i18n/LanguageContext';
 
-function getStatus(now = new Date()) {
+function getStatus(t, now = new Date()) {
     const day = now.getDay();
     const h = now.getHours() + now.getMinutes() / 60;
     const today = hours.find((r) => r.days.includes(day));
     if (today?.open != null && h >= today.open && h < today.close) {
-        return { open: true, label: `Åpent nå · stenger ${today.close}:00` };
+        return { open: true, label: `${t('status.openNow')} ${fmtTime(today.close)}` };
     }
-    // Find next opening
     for (let i = 0; i < 7; i++) {
         const d = (day + i) % 7;
         const row = hours.find((r) => r.days.includes(d));
         if (row?.open == null) continue;
-        if (i === 0 && h < row.open) return { open: false, label: `Stengt · åpner ${row.open}:00` };
-        if (i > 0) {
-            const name = i === 1 ? 'i morgen' : ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'][d];
-            return { open: false, label: `Stengt · åpner ${name} ${row.open}:00` };
+        if (i === 0) {
+            if (h < row.open) return { open: false, label: `${t('status.closedOpens')} ${fmtTime(row.open)}` };
+            continue;
         }
+        const name = i === 1 ? t('status.tomorrow') : t('status.days')[d];
+        return { open: false, label: `${t('status.closedOpens')} ${name} ${fmtTime(row.open)}` };
     }
-    return { open: false, label: 'Stengt' };
+    return { open: false, label: t('status.closed') };
 }
 
 export default function OpenStatus({ className = '' }) {
-    const [status, setStatus] = useState(getStatus);
+    const { t } = useLang();
+    const [now, setNow] = useState(() => new Date());
 
     useEffect(() => {
-        const t = setInterval(() => setStatus(getStatus()), 60_000);
-        return () => clearInterval(t);
+        const id = setInterval(() => setNow(new Date()), 60_000);
+        return () => clearInterval(id);
     }, []);
+
+    const status = getStatus(t, now);
 
     return (
         <span

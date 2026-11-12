@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useLang } from '../i18n/LanguageContext';
 
 // Short branded intro: barber pole fills, then the curtain lifts. Once per session.
 export default function Intro() {
+    const { t } = useLang();
     const [phase, setPhase] = useState(() => {
         try {
             if (sessionStorage.getItem('cb-intro')) return 'done';
@@ -32,7 +34,7 @@ export default function Intro() {
                         <div className="pole-stripes animate-pole h-full w-full" />
                     </div>
                 </div>
-                <p className="font-display text-sm uppercase tracking-[0.4em] text-mute">Drammen · Est. 2024</p>
+                <p className="font-display text-sm uppercase tracking-[0.4em] text-mute">{t('intro')}</p>
             </div>
         </div>
     );

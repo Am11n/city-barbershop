@@ -3,10 +3,12 @@ import { X, ExternalLink } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { BOOKING_URL } from '../config/booking';
 import TeqBookFrame from './TeqBookFrame';
+import { useLang } from '../i18n/LanguageContext';
 
 // Slide-over booking panel: opened from any "Book time" button.
 export default function BookingDrawer() {
     const { open, closeBooking, embeddable } = useBooking();
+    const { t } = useLang();
 
     useEffect(() => {
         if (!open) return;
@@ -31,7 +33,7 @@ export default function BookingDrawer() {
             <aside
                 role="dialog"
                 aria-modal="true"
-                aria-label="Book time"
+                aria-label={t('booking.drawerTitle')}
                 className={`absolute inset-y-0 right-0 flex w-full max-w-xl flex-col bg-coal shadow-2xl transition-transform duration-500 ease-[cubic-bezier(.2,.7,.2,1)] sm:inset-y-3 sm:right-3 sm:rounded-3xl sm:border sm:border-white/10 ${open ? 'translate-x-0' : 'translate-x-[110%]'
                     }`}
             >
@@ -39,7 +41,7 @@ export default function BookingDrawer() {
                     <div className="flex items-center gap-3">
                         <img src="/logo.png" alt="" className="h-9 w-9 rounded-full object-cover" />
                         <div>
-                            <p className="font-display text-xl uppercase leading-none">Book time</p>
+                            <p className="font-display text-xl uppercase leading-none">{t('booking.drawerTitle')}</p>
                             <p className="mt-1 text-xs text-mute">City Barbershop · Drammen</p>
                         </div>
                     </div>
@@ -49,14 +51,14 @@ export default function BookingDrawer() {
                             target="_blank"
                             rel="noopener"
                             className="grid h-10 w-10 place-items-center rounded-full text-mute hover:bg-white/5 hover:text-bone"
-                            aria-label="Åpne booking i ny fane"
+                            aria-label={t('booking.openNewTab')}
                         >
                             <ExternalLink className="h-4 w-4" />
                         </a>
                         <button
                             onClick={closeBooking}
                             className="grid h-10 w-10 place-items-center rounded-full border border-white/10 hover:bg-white/5"
-                            aria-label="Lukk"
+                            aria-label={t('booking.close')}
                         >
                             <X className="h-5 w-5" />
                         </button>

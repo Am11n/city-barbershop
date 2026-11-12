@@ -1,6 +1,8 @@
-const words = ['Skin fade', 'Skjeggtrim', 'Hot towel', 'Klassisk barbering', 'Taper', 'Barneklipp', 'Drop-in når det er ledig'];
+import { useLang } from '../i18n/LanguageContext';
 
 export default function Marquee() {
+    const { t } = useLang();
+    const words = t('marquee');
     const row = [...words, ...words];
     return (
         <div className="relative overflow-hidden border-y border-white/10 bg-pole py-4 text-white" aria-hidden="true">

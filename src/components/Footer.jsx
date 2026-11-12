@@ -1,17 +1,19 @@
 import { ArrowUpRight, Instagram } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
+import { useLang } from '../i18n/LanguageContext';
 
 export default function Footer() {
     const { openBooking } = useBooking();
+    const { t } = useLang();
 
     return (
         <footer className="relative overflow-hidden pb-28 pt-24 sm:pb-12">
             <div className="container-x">
                 <button onClick={openBooking} className="group block w-full text-left">
-                    <span className="eyebrow">Klar for en ny sveis?</span>
+                    <span className="eyebrow">{t('footer.ready')}</span>
                     <span className="mt-4 flex items-center justify-between gap-6 border-b border-white/10 pb-10">
                         <span className="font-display text-[16vw] uppercase leading-[0.85] transition-colors group-hover:text-pole sm:text-[10vw] lg:text-[9rem]">
-                            Book time
+                            {t('footer.cta')}
                         </span>
                         <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-pole transition-transform group-hover:rotate-45 sm:h-28 sm:w-28">
                             <ArrowUpRight className="h-8 w-8 sm:h-12 sm:w-12" />
