@@ -5,7 +5,7 @@ export const strings = {
         status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
         hero: {
             l1: 'Skarp.', l2: 'Ren.', l3: 'din.',
-            lead: 'Fades, klassisk klipp og skjeggtrim midt i Drammen. Book på under ett minutt.',
+            lead: 'Fades, klassisk klipp og skjeggtrim. Book på under ett minutt.',
             cta: 'Book time nå', prices: 'Se priser',
             statOnline: 'Nettbooking', statBarbers: 'Barberere', statRating: 'på Google',
             pause: 'Pause video', play: 'Spill av video',
@@ -78,7 +78,7 @@ export const strings = {
         status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
         hero: {
             l1: 'Sharp.', l2: 'Clean.', l3: 'yours.',
-            lead: 'Fades, classic cuts and beard trims in the heart of Drammen. Book in under a minute.',
+            lead: 'Fades, classic cuts and beard trims. Book in under a minute.',
             cta: 'Book now', prices: 'See prices',
             statOnline: 'Online booking', statBarbers: 'Barbers', statRating: 'on Google',
             pause: 'Pause video', play: 'Play video',

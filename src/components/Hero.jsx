@@ -1,19 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, MapPin, Pause, Play, Star } from 'lucide-react';
+import { ArrowUpRight, Pause, Play } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
-import { google } from '../data/team';
 import OpenStatus from './OpenStatus';
 
-// Muted walk-through of the salon. Falls back to the still photo when the
-// visitor prefers reduced motion or has data saver on.
+// Muted montage: a pan through the salon, then a barber at work and the
+// finished fade. Portrait screens get a vertical cut. Falls back to the
+// still photo when the visitor prefers reduced motion or has data saver on.
 function useHeroVideo() {
     const ref = useRef(null);
     const [enabled, setEnabled] = useState(false);
     const [playing, setPlaying] = useState(false);
+    const [variant, setVariant] = useState('desktop');
 
     useEffect(() => {
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        setVariant(window.matchMedia('(orientation: portrait)').matches ? 'mobile' : 'desktop');
         setEnabled(!reduced && !navigator.connection?.saveData);
     }, []);
 
@@ -23,7 +25,7 @@ function useHeroVideo() {
         if (v.paused) v.play(); else v.pause();
     };
 
-    return { ref, enabled, playing, setPlaying, toggle };
+    return { ref, enabled, variant, playing, setPlaying, toggle };
 }
 
 export default function Hero() {
@@ -38,8 +40,9 @@ export default function Hero() {
                     <video
                         ref={video.ref}
                         className="h-full w-full object-cover object-center"
-                        src="/video/salong-loop.mp4"
-                        poster="/images/salong-video-poster.webp"
+                        key={video.variant}
+                        src={`/video/hero-${video.variant}.mp4`}
+                        poster={`/images/hero-poster-${video.variant}.webp`}
                         autoPlay
                         muted
                         loop
@@ -81,18 +84,10 @@ export default function Hero() {
 
             <div className="container-x flex flex-1 flex-col justify-end pb-16 pt-32 sm:pb-14">
                 <div className="max-w-3xl">
-                    <div className="animate-rise flex flex-wrap items-center gap-2">
-                        <OpenStatus className="lg:hidden" />
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink/40 px-3 py-1.5 text-xs font-medium text-bone/80 backdrop-blur">
-                            <MapPin className="h-3.5 w-3.5" /> Tollbugata 14, Drammen
-                        </span>
-                        <a href="#anmeldelser" className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink/40 px-3 py-1.5 text-xs font-medium text-bone/80 backdrop-blur hover:text-bone">
-                            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                            {google.rating.toFixed(1).replace('.', t('stats.decimal'))} · {google.count} {t('hero.statRating')}
-                        </a>
-                    </div>
+                    {/* Desktop shows status, address and phone in the header info bar */}
+                    <OpenStatus className="animate-rise lg:hidden" />
 
-                    <h1 key={lang} className="animate-rise mt-5 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
+                    <h1 key={lang} className="animate-rise mt-5 lg:mt-0 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
                         {t('hero.l1')} {t('hero.l2')} <span className="font-serif normal-case italic tracking-normal text-pole">{t('hero.l3')}</span>
                     </h1>
 
