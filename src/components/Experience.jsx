@@ -8,7 +8,7 @@ export default function Experience() {
     const { t, L } = useLang();
 
     return (
-        <section id="opplevelsen" className="relative overflow-hidden py-24 sm:py-32">
+        <section id="opplevelsen" className="relative overflow-clip py-24 sm:py-32">
             <div className="container-x grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
                 <div className="reveal lg:sticky lg:top-28 lg:self-start">
                     <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('experience.eyebrow')}</span>

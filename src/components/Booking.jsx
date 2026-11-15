@@ -12,7 +12,7 @@ export default function Booking() {
     const perks = t('booking.perks').map(([title, text], i) => ({ icon: perkIcons[i], title, text }));
 
     return (
-        <section id="booking" className="relative overflow-hidden py-24 sm:py-32">
+        <section id="booking" className="relative overflow-clip py-24 sm:py-32">
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom_right,rgba(31,58,138,.35),transparent_60%)]" />
             <div className="container-x grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
                 <div className="reveal lg:sticky lg:top-28 lg:self-start">
