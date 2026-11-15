@@ -28,7 +28,7 @@ export const team = [
 // Real work from the salon (Drive: "City barbershop 2025 bilde og video").
 export const gallery = [
     '/images/klipp-3623.webp',
-    '/images/klipp-4038.webp',
+    '/images/klipp-4230.webp',
     '/images/klipp-4111.webp',
     '/images/klipp-3911.webp',
     '/images/klipp-4211.webp',
