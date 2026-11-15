@@ -9,7 +9,6 @@ import StatsBanner from './components/StatsBanner';
 import Products from './components/Products';
 import Team from './components/Team';
 import Reviews from './components/Reviews';
-import Membership from './components/Membership';
 import Booking from './components/Booking';
 import Faq from './components/Faq';
 import Contact from './components/Contact';
@@ -41,7 +40,6 @@ function Page() {
         <Reviews />
         <Experience />
         <Products />
-        <Membership />
         <Booking />
         <Faq />
         <Contact />

@@ -1,7 +1,7 @@
 // UI copy. List-shaped content (services, team, FAQ, ...) lives in src/data with { no, en } fields.
 export const strings = {
     no: {
-        nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', club: 'City Club', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', closedSun: 'Søndag stengt', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
+        nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', closedSun: 'Søndag stengt', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
         status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
         hero: {
             l1: 'Skarp.', l2: 'Ren.', l3: 'din.',
@@ -41,12 +41,6 @@ export const strings = {
             imgAlt: 'Loungen og barberstolene i City Barbershop',
         },
         team: { eyebrow: 'Barberne', h1: 'Stolene', h2: 'og', h3: 'hendene.', instagram: 'Følg på Instagram', bookWith: 'Book time hos', work: 'Arbeid fra City Barbershop' },
-        club: {
-            eyebrow: 'City Club', h1: 'Fast pris.', h2: 'Alltid', h3: 'fresh.',
-            lead: 'Bli medlem og betal én gang i måneden. Ingen binding, si opp når du vil.',
-            perMonth: 'kr / mnd', recommended: 'Anbefalt', join: 'Bli medlem',
-            note: 'Medlemskap er et forslag i prototypen. Priser og vilkår avtales.',
-        },
         reviews: {
             eyebrow: 'Anmeldelser', h1: 'Kundene', h2: 'sier det', h3: 'best.',
             basedOn: 'basert på', reviewsWord: 'anmeldelser på Google',
@@ -80,7 +74,7 @@ export const strings = {
         intro: 'Drammen · Est. 2024',
     },
     en: {
-        nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', club: 'City Club', reviews: 'Reviews', contact: 'Visit', call: 'Call us', closedSun: 'Closed Sundays', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
+        nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', closedSun: 'Closed Sundays', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
         status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
         hero: {
             l1: 'Sharp.', l2: 'Clean.', l3: 'yours.',
@@ -120,12 +114,6 @@ export const strings = {
             imgAlt: 'The lounge and barber chairs at City Barbershop',
         },
         team: { eyebrow: 'The barbers', h1: 'The chairs', h2: 'and', h3: 'the hands.', instagram: 'Follow on Instagram', bookWith: 'Book with', work: 'Work from City Barbershop' },
-        club: {
-            eyebrow: 'City Club', h1: 'One price.', h2: 'Always', h3: 'fresh.',
-            lead: 'Become a member and pay once a month. No lock-in, cancel any time.',
-            perMonth: 'NOK / mo', recommended: 'Recommended', join: 'Join now',
-            note: 'Membership is a proposal in this prototype. Prices and terms to be agreed.',
-        },
         reviews: {
             eyebrow: 'Reviews', h1: 'Our clients', h2: 'say it', h3: 'best.',
             basedOn: 'based on', reviewsWord: 'reviews on Google',

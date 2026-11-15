@@ -33,7 +33,6 @@ export default function Header() {
         { name: t('nav.team'), href: '#team' },
         { name: t('nav.gallery'), href: '#galleri' },
         { name: t('nav.reviews'), href: '#anmeldelser' },
-        { name: t('nav.club'), href: '#club' },
         { name: t('nav.contact'), href: '#kontakt' },
     ];
 

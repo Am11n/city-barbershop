@@ -15,25 +15,6 @@ export const steps = [
     { icon: 'Sparkles', title: { no: 'Finish', en: 'Finish' }, text: { no: 'Styling, råd om produkter, og du går ut klar for helgen.', en: 'Styling, product advice, and you walk out ready for the weekend.' } },
 ];
 
-// Proposed monthly membership: a recurring-revenue idea to pitch to the shop owner.
-export const plans = [
-    {
-        name: 'Fresh', price: 790,
-        tagline: { no: 'For deg som vil holde fasongen.', en: 'For keeping your shape between cuts.' },
-        perks: { no: ['1 klipp i måneden', '10 % på produkter', 'Prioritert booking'], en: ['1 cut per month', '10% off products', 'Priority booking'] },
-    },
-    {
-        name: 'Sharp', price: 1290, featured: true,
-        tagline: { no: 'Alltid skarp. Den mest populære.', en: 'Always sharp. The most popular.' },
-        perks: { no: ['2 klipp i måneden', 'Skjeggtrim inkludert', '15 % på produkter', 'Prioritert booking'], en: ['2 cuts per month', 'Beard trim included', '15% off products', 'Priority booking'] },
-    },
-    {
-        name: 'Executive', price: 1990,
-        tagline: { no: 'Ubegrenset. For deg som aldri kan se sliten ut.', en: 'Unlimited. For when looking tired is not an option.' },
-        perks: { no: ['Ubegrenset klipp', 'Skjegg + hot towel hver gang', '20 % på produkter', 'Fast barber og fast tid'], en: ['Unlimited cuts', 'Beard + hot towel every visit', '20% off products', 'Your own barber and fixed slot'] },
-    },
-];
-
 export const faqs = [
     { q: { no: 'Må jeg bestille time, eller tar dere drop-in?', en: 'Do I need to book, or do you take walk-ins?' }, a: { no: 'Vi anbefaler å booke på nett, så slipper du å vente. Drop-in tar vi når det er ledig. Ring gjerne først.', en: 'We recommend booking online so you do not have to wait. We take walk-ins when there is room. Feel free to call first.' } },
     { q: { no: 'Hvordan avbestiller eller flytter jeg timen?', en: 'How do I cancel or move my appointment?' }, a: { no: 'Bruk lenken i bekreftelsen du får etter booking, eller ring oss. Gi beskjed senest 24 timer før.', en: 'Use the link in your booking confirmation, or give us a call. Please let us know at least 24 hours ahead.' } },
