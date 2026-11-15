@@ -22,7 +22,7 @@ export default function SEO() {
         '@type': 'BarberShop',
         name: 'City Barbershop Drammen',
         url: 'https://citybarbershop.no',
-        image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70',
+        image: 'https://citybarbershop.no/images/og-salong.jpg',
         telephone: '+4746865541',
         address: {
             '@type': 'PostalAddress',
@@ -59,6 +59,9 @@ export default function SEO() {
             <meta name="description" content={meta[lang].description} />
             <meta property="og:title" content={meta[lang].title} />
             <meta property="og:description" content={meta[lang].description} />
+            <meta property="og:image" content="https://citybarbershop.no/images/og-salong.jpg" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
             <meta property="og:locale" content={lang === 'no' ? 'nb_NO' : 'en_GB'} />
             <script type="application/ld+json">{JSON.stringify(business)}</script>
             <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
