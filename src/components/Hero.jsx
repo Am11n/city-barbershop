@@ -59,15 +59,17 @@ export default function Hero() {
                         fetchpriority="high"
                     />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/55 to-ink" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(224,38,47,.28),transparent_55%)]" />
+                {/* Light at the top so the video shows; dark at the bottom where the text sits */}
+                <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(224,38,47,.22),transparent_50%)]" />
             </div>
 
             {video.enabled && (
                 <button
                     onClick={video.toggle}
                     aria-label={video.playing ? t('hero.pause') : t('hero.play')}
-                    className="absolute bottom-24 right-4 z-20 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-ink/50 text-bone backdrop-blur transition-colors hover:bg-ink/80 sm:bottom-8 sm:right-8"
+                    className="absolute right-4 top-24 z-20 grid sm:top-auto h-11 w-11 place-items-center rounded-full border border-white/15 bg-ink/50 text-bone backdrop-blur transition-colors hover:bg-ink/80 sm:bottom-8 sm:right-8"
                 >
                     {video.playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                 </button>
@@ -77,49 +79,32 @@ export default function Hero() {
                 <div className="pole-stripes animate-pole h-full w-full opacity-90" />
             </div>
 
-            <div className="container-x flex flex-1 flex-col justify-end pb-14 pt-32 sm:pb-20">
-                <div className="animate-rise flex flex-wrap items-center gap-3">
-                    <OpenStatus className="lg:hidden" />
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-bone/80 backdrop-blur">
-                        <MapPin className="h-3.5 w-3.5" /> Tollbugata 14, Drammen
-                    </span>
-                </div>
+            <div className="container-x flex flex-1 flex-col justify-end pb-16 pt-32 sm:pb-14">
+                <div className="max-w-3xl">
+                    <div className="animate-rise flex flex-wrap items-center gap-2">
+                        <OpenStatus className="lg:hidden" />
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink/40 px-3 py-1.5 text-xs font-medium text-bone/80 backdrop-blur">
+                            <MapPin className="h-3.5 w-3.5" /> Tollbugata 14, Drammen
+                        </span>
+                        <a href="#anmeldelser" className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink/40 px-3 py-1.5 text-xs font-medium text-bone/80 backdrop-blur hover:text-bone">
+                            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                            {google.rating.toFixed(1).replace('.', t('stats.decimal'))} · {google.count} {t('hero.statRating')}
+                        </a>
+                    </div>
 
-                <h1 key={lang} className="mt-6 font-display uppercase leading-[0.86] tracking-tight">
-                    <span className="animate-rise block text-[18vw] sm:text-[13vw] lg:text-[11rem]" style={{ animationDelay: '.08s' }}>
-                        {t('hero.l1')}
-                    </span>
-                    <span className="animate-rise block text-[18vw] sm:text-[13vw] lg:text-[11rem]" style={{ animationDelay: '.16s' }}>
-                        {t('hero.l2')} <span className="font-serif normal-case italic tracking-normal text-pole">{t('hero.l3')}</span>
-                    </span>
-                </h1>
+                    <h1 key={lang} className="animate-rise mt-5 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
+                        {t('hero.l1')} {t('hero.l2')} <span className="font-serif normal-case italic tracking-normal text-pole">{t('hero.l3')}</span>
+                    </h1>
 
-                <div className="animate-rise mt-8 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end" style={{ animationDelay: '.28s' }}>
-                    <p className="max-w-xl text-lg leading-relaxed text-bone/75 sm:text-xl">{t('hero.lead')}</p>
-                    <div className="flex flex-col gap-3 sm:flex-row">
-                        <button onClick={openBooking} className="btn-primary px-8 py-4 text-base">
+                    <p className="animate-rise mt-5 max-w-md text-base leading-relaxed text-bone/80 sm:text-lg" style={{ animationDelay: '.2s' }}>
+                        {t('hero.lead')}
+                    </p>
+
+                    <div className="animate-rise mt-7 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '.3s' }}>
+                        <button onClick={openBooking} className="btn-primary px-7 py-3.5 text-base">
                             {t('hero.cta')} <ArrowUpRight className="h-5 w-5" />
                         </button>
-                        <a href="#tjenester" className="btn-ghost px-8 py-4 text-base">{t('hero.prices')}</a>
-                    </div>
-                </div>
-
-                <div className="animate-rise mt-14 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 sm:max-w-xl" style={{ animationDelay: '.4s' }}>
-                    <a href="#anmeldelser" className="group">
-                        <div className="flex items-center gap-1.5 font-display text-3xl sm:text-4xl">
-                            {google.rating.toFixed(1).replace(".", t("stats.decimal"))} <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
-                        </div>
-                        <div className="mt-1 text-xs uppercase tracking-widest text-mute group-hover:text-bone">
-                            {google.count} {t('hero.statRating')}
-                        </div>
-                    </a>
-                    <div>
-                        <div className="font-display text-3xl sm:text-4xl">24/7</div>
-                        <div className="mt-1 text-xs uppercase tracking-widest text-mute">{t('hero.statOnline')}</div>
-                    </div>
-                    <div>
-                        <div className="font-display text-3xl sm:text-4xl">3</div>
-                        <div className="mt-1 text-xs uppercase tracking-widest text-mute">{t('hero.statBarbers')}</div>
+                        <a href="#tjenester" className="btn-ghost px-7 py-3.5 text-base">{t('hero.prices')}</a>
                     </div>
                 </div>
             </div>
