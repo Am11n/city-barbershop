@@ -7,6 +7,9 @@ import OpenStatus from './OpenStatus';
 // Muted montage: a pan through the salon, then a barber at work and the
 // finished fade. Portrait screens get a vertical cut. Falls back to the
 // still photo when the visitor prefers reduced motion or has data saver on.
+// Phone footage is fast and handheld; play it slower so it feels calm.
+const PLAYBACK_RATE = 0.6;
+
 function useHeroVideo() {
     const ref = useRef(null);
     const [enabled, setEnabled] = useState(false);
@@ -48,7 +51,8 @@ export default function Hero() {
                         loop
                         playsInline
                         aria-hidden="true"
-                        onPlay={() => video.setPlaying(true)}
+                        onLoadedMetadata={(e) => { e.currentTarget.defaultPlaybackRate = PLAYBACK_RATE; e.currentTarget.playbackRate = PLAYBACK_RATE; }}
+                        onPlay={(e) => { e.currentTarget.playbackRate = PLAYBACK_RATE; video.setPlaying(true); }}
                         onPause={() => video.setPlaying(false)}
                     />
                 ) : (
