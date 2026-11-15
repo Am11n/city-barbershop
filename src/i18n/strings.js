@@ -9,7 +9,6 @@ export const strings = {
             statOnline: 'Nettbooking', statBarbers: 'Barberere', statRating: 'på Google',
             pause: 'Pause video', play: 'Spill av video',
         },
-        marquee: ['Skin fade', 'Skjeggtrim', 'Hot towel', 'Klassisk barbering', 'Taper', 'Barneklipp', 'Drop-in når det er ledig'],
         services: {
             eyebrow: 'Tjenester & priser', h1: 'Hva skal vi', h2: 'gjøre', h3: 'i dag?',
             lead: 'Faste priser, ingen overraskelser. Trykk på en tjeneste for å finne ledig tid. Du velger barber i neste steg.',
@@ -79,7 +78,6 @@ export const strings = {
             statOnline: 'Online booking', statBarbers: 'Barbers', statRating: 'on Google',
             pause: 'Pause video', play: 'Play video',
         },
-        marquee: ['Skin fade', 'Beard trim', 'Hot towel', 'Classic shave', 'Taper', 'Kids cut', 'Walk-ins when available'],
         services: {
             eyebrow: 'Services & prices', h1: 'What are we', h2: 'doing', h3: 'today?',
             lead: 'Fixed prices, no surprises. Tap a service to find an open slot. You choose your barber in the next step.',

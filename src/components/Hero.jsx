@@ -67,12 +67,12 @@ export default function Hero() {
                         onPause={() => video.setPlaying(false)}
                     />
                 )}
+                {/* Barber-pole red tint across the whole hero */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(224,38,47,.2)] via-[rgba(224,38,47,.2)] to-transparent" />
                 {/* Light at the top so the video shows; dark at the bottom where the text sits */}
                 <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink/70 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_center,rgba(11,11,12,.6),transparent)]" />
-                {/* Barber-pole red tint across the whole hero */}
-                <div className="absolute inset-0 bg-[rgba(224,38,47,.2)]" />
             </div>
 
             {video.enabled && (
