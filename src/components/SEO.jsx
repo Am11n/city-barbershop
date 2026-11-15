@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { faqs } from '../data/content';
-import { google, hours, instagramUrl } from '../data/team';
+import { facebookUrl, google, hours, instagramUrl } from '../data/team';
 import { services } from '../data/services';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -45,7 +45,7 @@ export default function SEO() {
         },
         geo: { '@type': 'GeoCoordinates', latitude: 59.7385893, longitude: 10.2046242 },
         hasMap: google.mapsUrl,
-        sameAs: [instagramUrl, google.mapsUrl],
+        sameAs: [instagramUrl, facebookUrl, google.mapsUrl],
         areaServed: { '@type': 'City', name: 'Drammen' },
         openingHoursSpecification: hours
             .filter((h) => h.open != null)

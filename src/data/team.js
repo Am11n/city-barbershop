@@ -47,6 +47,7 @@ export const fmtTime = (h) =>
     `${String(Math.floor(h)).padStart(2, '0')}:${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
 
 export const instagramUrl = 'https://www.instagram.com/citybarbershopdrammen/';
+export const facebookUrl = 'https://www.facebook.com/CityBarbershopDrammen';
 
 // Public Google Business profile data (from Google Maps, Nov 2026)
 export const google = {
