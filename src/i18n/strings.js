@@ -18,7 +18,7 @@ export const strings = {
         experience: {
             eyebrow: 'Opplevelsen', h1: 'Mer enn', h2: 'en klipp.',
             lead: 'Hver time følger det samme ritualet. Det er derfor kundene kommer tilbake, og derfor tar vi oss betalt for det.',
-            imgAlt: 'Barber som former skjegg med kniv',
+            imgAlt: 'Loungen og barberstolene i City Barbershop',
         },
         team: { eyebrow: 'Barberne', h1: 'Stolene', h2: 'og', h3: 'hendene.', instagram: 'Følg på Instagram', bookWith: 'Book time hos', work: 'Arbeid fra City Barbershop' },
         club: {
@@ -76,7 +76,7 @@ export const strings = {
         experience: {
             eyebrow: 'The experience', h1: 'More than', h2: 'a haircut.',
             lead: 'Every appointment follows the same ritual. That is why clients come back, and why it is worth the price.',
-            imgAlt: 'Barber shaping a beard with a straight razor',
+            imgAlt: 'The lounge and barber chairs at City Barbershop',
         },
         team: { eyebrow: 'The barbers', h1: 'The chairs', h2: 'and', h3: 'the hands.', instagram: 'Follow on Instagram', bookWith: 'Book with', work: 'Work from City Barbershop' },
         club: {

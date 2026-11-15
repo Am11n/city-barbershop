@@ -12,7 +12,9 @@ export default function Hero() {
         <section id="top" className="grain relative isolate flex min-h-[100svh] flex-col overflow-hidden">
             <div className="absolute inset-0 -z-10">
                 <img
-                    src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=2000&auto=format&fit=crop&q=80"
+                    src="/images/salong-2000.webp"
+                    srcSet="/images/salong-1200.webp 1200w, /images/salong-2000.webp 2000w"
+                    sizes="100vw"
                     alt=""
                     className="h-full w-full scale-105 object-cover object-center"
                     loading="eager"

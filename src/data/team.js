@@ -25,12 +25,13 @@ export const team = [
     },
 ];
 
+// Real work from the salon (Drive: "City barbershop 2025 bilde og video").
 export const gallery = [
-    'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1717089256239-dc2ed4d9dfc6?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1686671805337-7d8aa64b965f?w=900&auto=format&fit=crop&q=70',
-    'https://images.unsplash.com/photo-1653758265969-b048bb0b328a?w=900&auto=format&fit=crop&q=70',
+    '/images/klipp-3623.webp',
+    '/images/klipp-4038.webp',
+    '/images/klipp-4111.webp',
+    '/images/klipp-3829.webp',
+    '/images/klipp-4212.webp',
 ];
 
 // Opening hours as listed on Google Maps (Nov 2026). Times are decimal hours.
