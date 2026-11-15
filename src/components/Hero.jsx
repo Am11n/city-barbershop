@@ -84,10 +84,9 @@ export default function Hero() {
 
             <div className="container-x flex flex-1 flex-col justify-end pb-16 pt-32 sm:pb-14">
                 <div className="max-w-4xl">
-                    {/* Desktop shows status, address and phone in the header info bar */}
-                    <OpenStatus className="animate-rise lg:hidden" />
+                    <OpenStatus className="animate-rise" />
 
-                    <h1 key={lang} className="animate-rise mt-5 lg:mt-0 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
+                    <h1 key={lang} className="animate-rise mt-5 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
                         City <span className="text-pole">Barbershop</span>
                     </h1>
 

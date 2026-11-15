@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, ArrowUpRight, Phone, MapPin } from 'lucide-react';
-import OpenStatus from './OpenStatus';
+import { Menu, X, ArrowUpRight, Phone } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -45,16 +44,6 @@ export default function Header() {
 
     return (
         <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
-            {/* Info bar: status, address and phone. Folds away once you scroll. */}
-            <div
-                className={`mx-auto hidden max-w-7xl items-center justify-between overflow-hidden px-5 text-xs text-bone/70 transition-all duration-500 lg:flex ${scrolled ? 'max-h-0 opacity-0' : 'mb-2 max-h-10 opacity-100'}`}
-            >
-                <OpenStatus className="border-transparent bg-transparent px-0" />
-                <div className="flex items-center gap-5">
-                    <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Tollbugata 14, 3044 Drammen</span>
-                    <a href="tel:+4746865541" className="inline-flex items-center gap-1.5 hover:text-bone"><Phone className="h-3.5 w-3.5" /> 468 65 541</a>
-                </div>
-            </div>
             <div
                 className={`mx-auto flex h-[68px] max-w-7xl items-center justify-between rounded-full border px-3 pl-1.5 transition-all duration-500 sm:h-[76px] sm:px-4 sm:pl-1.5 ${scrolled || isOpen
                     ? 'border-white/10 bg-ink/75 shadow-2xl shadow-black/40 backdrop-blur-xl'
