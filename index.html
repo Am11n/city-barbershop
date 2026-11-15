@@ -1,23 +1,46 @@
 <!doctype html>
-<html lang="no">
+<html lang="nb">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0b0c" />
-  <meta name="description" content="City Barbershop - Fades, klassisk klipp og skjeggtrim i Drammen sentrum. Book time på nett." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.citybarbershop.no/" />
+
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Social previews (static, so crawlers that don't run JS see them) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="City Barbershop Drammen" />
+  <meta property="og:url" content="https://www.citybarbershop.no/" />
+  <meta property="og:title" content="City Barbershop | Barber i Drammen sentrum" />
+  <meta property="og:description" content="Fades, klassisk klipp og skjeggtrim i Tollbugata 14, Drammen. 5,0 på Google. Book time på nett." />
+  <meta property="og:image" content="https://www.citybarbershop.no/images/og-salong.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Barberstolene og de runde speilene i City Barbershop i Drammen" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <!-- Fonts load without blocking the first paint (text uses font-display: swap) -->
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet" />
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" />
+  </noscript>
   <link rel="preconnect" href="https://staging.teqbook.com" />
-  <title>City Barbershop | Barber i Drammen</title>
+  <!--app-head-->
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

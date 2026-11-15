@@ -70,5 +70,5 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-marquee, .animate-pole, .animate-rise { animation: none !important; }
+  .animate-pole, .animate-rise { animation: none !important; }
 }

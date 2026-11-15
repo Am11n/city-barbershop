@@ -39,7 +39,7 @@ export default function BookingDrawer() {
             >
                 <div className="flex items-center justify-between gap-3 px-5 py-4">
                     <div className="flex items-center gap-3">
-                        <img src="/logo.png" alt="" className="h-9 w-9 rounded-full object-cover" />
+                        <img src="/logo-256.webp" alt="" className="h-9 w-9 rounded-full object-cover" />
                         <div>
                             <p className="font-display text-xl uppercase leading-none">{t('booking.drawerTitle')}</p>
                             <p className="mt-1 text-xs text-mute">City Barbershop · Drammen</p>

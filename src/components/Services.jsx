@@ -1,11 +1,40 @@
 import { ArrowUpRight, Clock } from 'lucide-react';
-import { services } from '../data/services';
+import { services, serviceCategories } from '../data/services';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
+
+function ServiceRow({ s, onBook, t, L }) {
+    return (
+        <li>
+            <button
+                onClick={onBook}
+                className="group -mx-3 grid w-[calc(100%+1.5rem)] grid-cols-[1fr_auto] gap-x-6 gap-y-1 rounded-2xl px-3 py-5 text-left transition-colors hover:bg-white/[0.04]"
+            >
+                <span className="flex flex-wrap items-center gap-2.5">
+                    <span className="text-lg font-semibold transition-colors group-hover:text-pole">{L(s.name)}</span>
+                    {s.popular && (
+                        <span className="rounded-full bg-pole/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-pole">
+                            {t('services.popular')}
+                        </span>
+                    )}
+                </span>
+                <span className="whitespace-nowrap font-display text-2xl">
+                    {s.price}<span className="ml-1 text-sm text-mute">{t('services.currency')}</span>
+                </span>
+                <span className="text-sm leading-relaxed text-bone/55">{L(s.description)}</span>
+                <span className="inline-flex items-start justify-end gap-1.5 pt-0.5 text-xs text-mute">
+                    <Clock className="h-3.5 w-3.5" /> {s.duration} {t('services.min')}
+                </span>
+            </button>
+        </li>
+    );
+}
 
 export default function Services() {
     const { openBooking } = useBooking();
     const { t, L } = useLang();
+    const byCat = (id) => services.filter((s) => s.category === id);
+    const combo = byCat('combo')[0];
 
     return (
         <section id="tjenester" className="py-24 sm:py-32">
@@ -20,45 +49,60 @@ export default function Services() {
                     <p className="max-w-md text-bone/65 lg:justify-self-end">{t('services.lead')}</p>
                 </div>
 
-                <ul className="mt-14 divide-y divide-white/10 border-y border-white/10">
-                    {services.map((s, i) => (
-                        <li key={s.id} className="reveal" style={{ transitionDelay: `${i * 50}ms` }}>
-                            <button
-                                onClick={openBooking}
-                                className="group grid w-full grid-cols-[1fr_auto] items-center gap-4 py-7 text-left transition-colors sm:grid-cols-[3rem_1fr_auto_auto] sm:gap-8"
-                            >
-                                <span className="hidden font-display text-lg text-mute sm:block">{String(i + 1).padStart(2, '0')}</span>
-                                <span>
-                                    <span className="flex flex-wrap items-center gap-3">
-                                        <span className="font-display text-3xl uppercase tracking-wide transition-colors group-hover:text-pole sm:text-4xl">
-                                            {L(s.name)}
-                                        </span>
-                                        {s.popular && (
-                                            <span className="rounded-full bg-pole/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-pole">
-                                                {t('services.popular')}
-                                            </span>
-                                        )}
-                                    </span>
-                                    <span className="mt-2 block max-w-xl text-sm text-bone/60">{L(s.description)}</span>
-                                    <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-mute sm:hidden">
-                                        <Clock className="h-3.5 w-3.5" /> {s.duration} {t('services.min')}
-                                    </span>
+                <div className="mt-14 grid gap-5 lg:grid-cols-3">
+                    {serviceCategories.filter((c) => c.id !== 'combo').map((c, i) => (
+                        <div
+                            key={c.id}
+                            className="reveal rounded-[2rem] border border-white/10 bg-coal p-6 sm:p-8"
+                            style={{ transitionDelay: `${i * 80}ms` }}
+                        >
+                            <h3 className="flex items-center justify-between font-display text-3xl uppercase tracking-wide">
+                                {L(c.name)}
+                                <span className="text-sm font-sans font-medium normal-case tracking-normal text-mute">
+                                    {byCat(c.id).length} {t('services.count')}
                                 </span>
-                                <span className="hidden items-center gap-1.5 text-sm text-mute sm:inline-flex">
-                                    <Clock className="h-4 w-4" /> {s.duration} {t('services.min')}
-                                </span>
-                                <span className="flex items-center gap-4">
-                                    <span className="font-display text-3xl sm:text-4xl">
-                                        {s.price}<span className="ml-1 text-base text-mute">{t('services.currency')}</span>
-                                    </span>
-                                    <span className="hidden h-12 w-12 place-items-center rounded-full border border-white/15 transition-all group-hover:rotate-45 group-hover:border-pole group-hover:bg-pole sm:grid">
-                                        <ArrowUpRight className="h-5 w-5" />
-                                    </span>
-                                </span>
-                            </button>
-                        </li>
+                            </h3>
+                            <ul className="mt-4 divide-y divide-white/10">
+                                {byCat(c.id).map((s) => <ServiceRow key={s.id} s={s} onBook={openBooking} t={t} L={L} />)}
+                            </ul>
+                        </div>
                     ))}
-                </ul>
+
+                    {combo && (
+                        <button
+                            onClick={openBooking}
+                            className="reveal group relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[2rem] border border-white/10 p-6 text-left sm:p-8"
+                            style={{ transitionDelay: '160ms' }}
+                        >
+                            <img
+                                src="/images/craft-skjegg.webp"
+                                alt=""
+                                loading="lazy"
+                                className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/70 to-ink/10" />
+                            <span className="self-start rounded-full bg-pole px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white">
+                                {t('services.bestValue')}
+                            </span>
+                            <h3 className="mt-4 font-display text-5xl uppercase leading-none">{L(combo.name)}</h3>
+                            <p className="mt-3 max-w-xs text-sm text-bone/70">{L(combo.description)}</p>
+                            <span className="mt-6 flex items-end justify-between gap-4 border-t border-white/15 pt-5">
+                                <span>
+                                    <span className="font-display text-5xl">{combo.price}</span>
+                                    <span className="ml-1 text-mute">{t('services.currency')}</span>
+                                    <span className="mt-1 flex items-center gap-1.5 text-xs text-mute">
+                                        <Clock className="h-3.5 w-3.5" /> {combo.duration} {t('services.min')}
+                                    </span>
+                                </span>
+                                <span className="grid h-12 w-12 place-items-center rounded-full bg-bone text-ink transition-all group-hover:rotate-45 group-hover:bg-pole group-hover:text-white">
+                                    <ArrowUpRight className="h-5 w-5" />
+                                </span>
+                            </span>
+                        </button>
+                    )}
+                </div>
+
+                <p className="reveal mt-6 text-center text-xs text-mute">{t('services.note')}</p>
             </div>
         </section>
     );

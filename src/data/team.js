@@ -27,11 +27,14 @@ export const team = [
 
 // Real work from the salon (Drive: "City barbershop 2025 bilde og video").
 export const gallery = [
-    '/images/klipp-3623.webp',
-    '/images/klipp-4038.webp',
-    '/images/klipp-4111.webp',
-    '/images/klipp-3829.webp',
-    '/images/klipp-4212.webp',
+    '/images/klipp-4230.webp',
+    '/images/klipp-4211.webp',
+    '/images/klipp-0547.webp',
+    '/images/klipp-3911.webp',
+    '/images/klipp-0815.webp',
+    '/images/klipp-4155.webp',
+    '/images/klipp-4202.webp',
+    '/images/klipp-4013.webp',
 ];
 
 // Opening hours as listed on Google Maps (Nov 2026). Times are decimal hours.
@@ -42,6 +45,9 @@ export const hours = [
 
 export const fmtTime = (h) =>
     `${String(Math.floor(h)).padStart(2, '0')}:${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
+
+export const instagramUrl = 'https://www.instagram.com/citybarbershopdrammen/';
+export const facebookUrl = 'https://www.facebook.com/CityBarbershopDrammen';
 
 // Public Google Business profile data (from Google Maps, Nov 2026)
 export const google = {

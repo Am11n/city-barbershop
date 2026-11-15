@@ -1,5 +1,5 @@
 import { ArrowUpRight, Instagram } from 'lucide-react';
-import { team, gallery } from '../data/team';
+import { team, instagramUrl } from '../data/team';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -18,7 +18,7 @@ export default function Team() {
                             <span className="font-serif normal-case italic text-pole">{t('team.h2')}</span> {t('team.h3')}
                         </h2>
                     </div>
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="btn-ghost self-start sm:self-auto">
+                    <a href={instagramUrl} target="_blank" rel="noreferrer" className="btn-ghost self-start sm:self-auto">
                         <Instagram className="h-4 w-4" /> {t('team.instagram')}
                     </a>
                 </div>
@@ -54,18 +54,6 @@ export default function Team() {
                         </article>
                     ))}
                 </div>
-            </div>
-
-            <div className="reveal mt-20 flex gap-4 overflow-x-auto px-4 pb-2 sm:px-6 lg:px-8 [scrollbar-width:none]">
-                {gallery.map((src, i) => (
-                    <img
-                        key={src}
-                        src={src}
-                        alt={`${t('team.work')} ${i + 1}`}
-                        loading="lazy"
-                        className={`h-64 w-52 shrink-0 rounded-2xl object-cover sm:h-80 sm:w-64 ${i % 2 ? 'sm:mt-10' : ''}`}
-                    />
-                ))}
             </div>
         </section>
     );

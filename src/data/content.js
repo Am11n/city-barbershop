@@ -1,3 +1,11 @@
+// "Håndverket" photo cards (real photos from the salon).
+export const craft = [
+    { image: '/images/craft-fade.webp', title: { no: 'Faden', en: 'The fade' }, text: { no: 'Myk overgang fra hud til lengde. Ingen kanter, ingen skurrer.', en: 'A soft blend from skin to length. No lines, no steps.' }, alt: { no: 'Curly crop med lav fade', en: 'Curly crop with a low fade' } },
+    { image: '/images/craft-detaljer.webp', title: { no: 'Detaljene', en: 'The details' }, text: { no: 'Linjer og mønster med kniv og trimmer.', en: 'Lines and patterns with razor and trimmer.' }, alt: { no: 'Mønster i nakken på afroklipp', en: 'Neckline pattern on an afro cut' } },
+    { image: '/images/craft-skjegg.webp', title: { no: 'Skjegget', en: 'The beard' }, text: { no: 'Formet etter ansiktet, ikke etter malen.', en: 'Shaped to the face, not to a template.' }, alt: { no: 'Klassisk klipp med fyldig skjegg', en: 'Classic cut with a full beard' } },
+    { image: '/images/craft-lounge.webp', title: { no: 'Loungen', en: 'The lounge' }, text: { no: 'Skinnsofaer, kaffe og god tid mens du venter.', en: 'Leather sofas, coffee and no rush while you wait.' }, alt: { no: 'Loungen med skinnsofaer i City Barbershop', en: 'The lounge with leather sofas at City Barbershop' } },
+];
+
 export const steps = [
     { icon: 'Coffee', title: { no: 'Velkommen', en: 'Welcome' }, text: { no: 'Kaffe, te eller vann mens du venter. Du blir tatt imot, ikke bare ropt opp.', en: 'Coffee, tea or water while you wait. You are welcomed, not just called up.' } },
     { icon: 'MessageCircle', title: { no: 'Konsultasjon', en: 'Consultation' }, text: { no: 'Vi ser på hodeform, hårvekst og hverdag før saksen kommer fram.', en: 'We look at head shape, hair growth and your routine before the scissors come out.' } },
@@ -5,25 +13,6 @@ export const steps = [
     { icon: 'Scissors', title: { no: 'Klipp', en: 'Cut' }, text: { no: 'Presisjonsarbeid med saks, maskin og kniv. Ingen hastverk.', en: 'Precision work with scissors, clippers and razor. No rushing.' } },
     { icon: 'Flame', title: { no: 'Hot towel', en: 'Hot towel' }, text: { no: 'Varmt håndkle åpner porene før skjegg og konturer.', en: 'A hot towel opens the pores before beard work and line-ups.' } },
     { icon: 'Sparkles', title: { no: 'Finish', en: 'Finish' }, text: { no: 'Styling, råd om produkter, og du går ut klar for helgen.', en: 'Styling, product advice, and you walk out ready for the weekend.' } },
-];
-
-// Proposed monthly membership: a recurring-revenue idea to pitch to the shop owner.
-export const plans = [
-    {
-        name: 'Fresh', price: 790,
-        tagline: { no: 'For deg som vil holde fasongen.', en: 'For keeping your shape between cuts.' },
-        perks: { no: ['1 klipp i måneden', '10 % på produkter', 'Prioritert booking'], en: ['1 cut per month', '10% off products', 'Priority booking'] },
-    },
-    {
-        name: 'Sharp', price: 1290, featured: true,
-        tagline: { no: 'Alltid skarp. Den mest populære.', en: 'Always sharp. The most popular.' },
-        perks: { no: ['2 klipp i måneden', 'Skjeggtrim inkludert', '15 % på produkter', 'Prioritert booking'], en: ['2 cuts per month', 'Beard trim included', '15% off products', 'Priority booking'] },
-    },
-    {
-        name: 'Executive', price: 1990,
-        tagline: { no: 'Ubegrenset. For deg som aldri kan se sliten ut.', en: 'Unlimited. For when looking tired is not an option.' },
-        perks: { no: ['Ubegrenset klipp', 'Skjegg + hot towel hver gang', '20 % på produkter', 'Fast barber og fast tid'], en: ['Unlimited cuts', 'Beard + hot towel every visit', '20% off products', 'Your own barber and fixed slot'] },
-    },
 ];
 
 export const faqs = [

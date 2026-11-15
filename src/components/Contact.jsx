@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
 import { hours, fmtTime, google } from '../data/team';
 import { useLang } from '../i18n/LanguageContext';
@@ -5,10 +6,11 @@ import OpenStatus from './OpenStatus';
 
 export default function Contact() {
     const { t, L } = useLang();
-    const today = new Date().getDay();
+    const [today, setToday] = useState(null);
+    useEffect(() => setToday(new Date().getDay()), []);
 
     return (
-        <section id="kontakt" className="bg-coal py-24 sm:py-32">
+        <section id="kontakt" className="bg-coal pb-16 pt-24 sm:pb-20 sm:pt-32">
             <div className="container-x grid gap-10 lg:grid-cols-2 lg:gap-16">
                 <div className="reveal">
                     <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('contact.eyebrow')}</span>
@@ -57,13 +59,28 @@ export default function Contact() {
                     </div>
                 </div>
 
-                <div className="reveal min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10">
-                    <iframe
-                        title={t('contact.mapTitle')}
-                        src="https://maps.google.com/maps?q=City%20Barbershop%20Drammen%2C%20Tollbugata%2014&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        className="h-full min-h-[420px] w-full border-0 [filter:grayscale(1)_invert(.92)_contrast(.9)]"
-                        loading="lazy"
-                    />
+                <div className="reveal flex flex-col gap-4">
+                    <figure className="relative isolate overflow-hidden rounded-[2rem] border border-white/10">
+                        <img
+                            src="/images/fasade.webp"
+                            alt={t('contact.storefrontAlt')}
+                            loading="lazy"
+                            className="aspect-[4/3] w-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent" />
+                        <figcaption className="absolute inset-x-0 bottom-0 p-6">
+                            <p className="text-xs uppercase tracking-widest text-pole">{t('contact.lookFor')}</p>
+                            <p className="mt-1 font-display text-3xl uppercase">{t('contact.storefront')}</p>
+                        </figcaption>
+                    </figure>
+                    <div className="min-h-[280px] flex-1 overflow-hidden rounded-[2rem] border border-white/10">
+                        <iframe
+                            title={t('contact.mapTitle')}
+                            src="https://maps.google.com/maps?q=City%20Barbershop%20Drammen%2C%20Tollbugata%2014&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            className="h-full min-h-[280px] w-full border-0 [filter:grayscale(1)_invert(.92)_contrast(.9)]"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
             </div>
         </section>

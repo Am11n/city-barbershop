@@ -1,13 +1,19 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { HelmetProvider } from 'react-helmet-async'
 import './index.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
+const app = (
   <StrictMode>
     <HelmetProvider>
       <App />
     </HelmetProvider>
-  </StrictMode>,
+  </StrictMode>
 )
+
+// Production HTML is prerendered (scripts/prerender.mjs); hydrate it.
+// In dev the root is empty, so render from scratch.
+const container = document.getElementById('root')
+if (container.firstElementChild) hydrateRoot(container, app)
+else createRoot(container).render(app)

@@ -8,21 +8,22 @@ export default function Experience() {
     const { t, L } = useLang();
 
     return (
-        <section id="opplevelsen" className="relative overflow-hidden py-24 sm:py-32">
+        <section id="opplevelsen" className="relative overflow-clip py-24 sm:py-32">
             <div className="container-x grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-                <div className="reveal lg:sticky lg:top-28 lg:self-start">
+                <div className="reveal flex flex-col">
                     <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('experience.eyebrow')}</span>
                     <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
                         {t('experience.h1')} <br />
                         <span className="font-serif normal-case italic text-pole">{t('experience.h2')}</span>
                     </h2>
                     <p className="mt-6 max-w-md text-bone/65">{t('experience.lead')}</p>
-                    <div className="relative mt-10 hidden aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem] lg:block">
+                    {/* Fills the rest of the column so it ends level with the last step on the right */}
+                    <div className="relative mt-10 hidden min-h-[320px] flex-1 overflow-hidden rounded-[2rem] lg:block">
                         <img
-                            src="/images/lounge.webp"
+                            src="/images/vaskeplass.webp"
                             alt={t('experience.imgAlt')}
                             loading="lazy"
-                            className="h-full w-full object-cover"
+                            className="absolute inset-0 h-full w-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
                     </div>

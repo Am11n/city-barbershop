@@ -1,11 +1,13 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { BOOKING_URL, canEmbedBooking } from '../config/booking';
 
 const BookingContext = createContext(null);
 
 export function BookingProvider({ children }) {
     const [open, setOpen] = useState(false);
-    const embeddable = useMemo(() => canEmbedBooking(), []);
+    // Decided after mount so the prerendered HTML matches the first client render.
+    const [embeddable, setEmbeddable] = useState(false);
+    useEffect(() => setEmbeddable(canEmbedBooking()), []);
 
     const openBooking = useCallback(() => {
         if (embeddable) setOpen(true);

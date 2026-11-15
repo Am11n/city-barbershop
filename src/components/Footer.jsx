@@ -1,37 +1,54 @@
-import { ArrowUpRight, Instagram } from 'lucide-react';
-import { useBooking } from '../context/BookingContext';
-import { useLang } from '../i18n/LanguageContext';
+import { Facebook, Instagram } from 'lucide-react';
+import { facebookUrl, instagramUrl } from '../data/team';
 
+const social = [
+    { href: instagramUrl, label: 'City Barbershop på Instagram', Icon: Instagram },
+    { href: facebookUrl, label: 'City Barbershop på Facebook', Icon: Facebook },
+];
+
+// Slim footer that continues the "Finn oss" section (same background).
 export default function Footer() {
-    const { openBooking } = useBooking();
-    const { t } = useLang();
-
     return (
-        <footer className="relative overflow-hidden pb-28 pt-24 sm:pb-12">
-            <div className="container-x">
-                <button onClick={openBooking} className="group block w-full text-left">
-                    <span className="eyebrow">{t('footer.ready')}</span>
-                    <span className="mt-4 flex items-center justify-between gap-6 border-b border-white/10 pb-10">
-                        <span className="font-display text-[16vw] uppercase leading-[0.85] transition-colors group-hover:text-pole sm:text-[10vw] lg:text-[9rem]">
-                            {t('footer.cta')}
-                        </span>
-                        <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-pole transition-transform group-hover:rotate-45 sm:h-28 sm:w-28">
-                            <ArrowUpRight className="h-8 w-8 sm:h-12 sm:w-12" />
-                        </span>
-                    </span>
-                </button>
+        <footer className="bg-coal pb-28 sm:pb-10">
+            <div className="container-x flex flex-col justify-between gap-6 border-t border-white/10 pt-8 text-sm text-mute sm:flex-row sm:items-center">
+                <div className="flex items-center gap-3">
+                    <img src="/logo-256.webp" alt="" className="h-9 w-9 rounded-full object-cover" />
+                    <span>© {new Date().getFullYear()} City Barbershop · Tollbugata 14, 3044 Drammen</span>
+                </div>
 
-                <div className="mt-10 flex flex-col justify-between gap-6 text-sm text-mute sm:flex-row sm:items-center">
-                    <div className="flex items-center gap-3">
-                        <img src="/logo.png" alt="" className="h-9 w-9 rounded-full object-cover" />
-                        <span>© {new Date().getFullYear()} City Barbershop · Tollbugata 14, 3044 Drammen</span>
-                    </div>
-                    <div className="flex items-center gap-6">
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-bone">
-                            <Instagram className="h-4 w-4" /> Instagram
+                <div className="flex items-center gap-5">
+                    {social.map(({ href, label, Icon }) => (
+                        <a
+                            key={href}
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={label}
+                            title={label}
+                            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-bone/70 transition-colors hover:border-white/30 hover:text-bone"
+                        >
+                            <Icon className="h-4 w-4" />
                         </a>
-                        <a href="tel:+4746865541" className="hover:text-bone">46 86 55 41</a>
-                    </div>
+                    ))}
+
+                    <span className="h-6 w-px bg-white/10" aria-hidden="true" />
+
+                    <a
+                        href="https://fikir.no"
+                        target="_blank"
+                        rel="noopener"
+                        className="group inline-flex items-center gap-3 text-xs uppercase tracking-widest text-mute transition-colors hover:text-bone"
+                    >
+                        Developed by
+                        <img
+                            src="/images/fikir-logo.webp"
+                            alt="Fikir"
+                            width="83"
+                            height="72"
+                            loading="lazy"
+                            className="h-10 w-auto opacity-90 transition-opacity group-hover:opacity-100"
+                        />
+                    </a>
                 </div>
             </div>
         </footer>
