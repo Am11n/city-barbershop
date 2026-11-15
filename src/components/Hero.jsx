@@ -79,10 +79,6 @@ export default function Hero() {
                 </button>
             )}
 
-            <div className="absolute right-6 top-0 hidden h-[62%] w-3 overflow-hidden rounded-b-full lg:block">
-                <div className="pole-stripes animate-pole h-full w-full opacity-90" />
-            </div>
-
             <div className="container-x flex flex-1 flex-col items-center justify-center pb-16 pt-32 text-center">
                 <div className="flex max-w-4xl flex-col items-center">
                     <OpenStatus className="animate-rise" />

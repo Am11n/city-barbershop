@@ -17,6 +17,7 @@ import SEO from './components/SEO';
 import Intro from './components/Intro';
 import BookingDrawer from './components/BookingDrawer';
 import MobileBookBar from './components/MobileBookBar';
+import ScrollPole from './components/ScrollPole';
 import { BookingProvider } from './context/BookingContext';
 import { LanguageProvider } from './i18n/LanguageContext';
 import useReveal from './hooks/useReveal';
@@ -29,6 +30,7 @@ function Page() {
       <Intro />
       <SEO />
       <Header />
+      <ScrollPole />
       <main>
         <Hero />
         <Marquee />
