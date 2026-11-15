@@ -3,6 +3,10 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Services from './components/Services';
 import Experience from './components/Experience';
+import Craft from './components/Craft';
+import Gallery from './components/Gallery';
+import StatsBanner from './components/StatsBanner';
+import Products from './components/Products';
 import Team from './components/Team';
 import Reviews from './components/Reviews';
 import Membership from './components/Membership';
@@ -30,9 +34,13 @@ function Page() {
         <Hero />
         <Marquee />
         <Services />
-        <Experience />
+        <Craft />
         <Team />
+        <Gallery />
+        <StatsBanner />
         <Reviews />
+        <Experience />
+        <Products />
         <Membership />
         <Booking />
         <Faq />

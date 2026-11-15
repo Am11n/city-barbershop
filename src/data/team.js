@@ -30,7 +30,10 @@ export const gallery = [
     '/images/klipp-3623.webp',
     '/images/klipp-4038.webp',
     '/images/klipp-4111.webp',
+    '/images/klipp-3911.webp',
+    '/images/klipp-4211.webp',
     '/images/klipp-3829.webp',
+    '/images/klipp-0815.webp',
     '/images/klipp-4212.webp',
 ];
 

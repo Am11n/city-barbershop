@@ -1,3 +1,11 @@
+// "Håndverket" photo cards (real photos from the salon).
+export const craft = [
+    { image: '/images/craft-fade.webp', title: { no: 'Faden', en: 'The fade' }, text: { no: 'Myk overgang fra hud til lengde. Ingen kanter, ingen skurrer.', en: 'A soft blend from skin to length. No lines, no steps.' }, alt: { no: 'Curly crop med lav fade', en: 'Curly crop with a low fade' } },
+    { image: '/images/craft-detaljer.webp', title: { no: 'Detaljene', en: 'The details' }, text: { no: 'Linjer og mønster med kniv og trimmer.', en: 'Lines and patterns with razor and trimmer.' }, alt: { no: 'Mønster i nakken på afroklipp', en: 'Neckline pattern on an afro cut' } },
+    { image: '/images/craft-skjegg.webp', title: { no: 'Skjegget', en: 'The beard' }, text: { no: 'Formet etter ansiktet, ikke etter malen.', en: 'Shaped to the face, not to a template.' }, alt: { no: 'Klassisk klipp med fyldig skjegg', en: 'Classic cut with a full beard' } },
+    { image: '/images/craft-lounge.webp', title: { no: 'Loungen', en: 'The lounge' }, text: { no: 'Skinnsofaer, kaffe og god tid mens du venter.', en: 'Leather sofas, coffee and no rush while you wait.' }, alt: { no: 'Loungen med skinnsofaer i City Barbershop', en: 'The lounge with leather sofas at City Barbershop' } },
+];
+
 export const steps = [
     { icon: 'Coffee', title: { no: 'Velkommen', en: 'Welcome' }, text: { no: 'Kaffe, te eller vann mens du venter. Du blir tatt imot, ikke bare ropt opp.', en: 'Coffee, tea or water while you wait. You are welcomed, not just called up.' } },
     { icon: 'MessageCircle', title: { no: 'Konsultasjon', en: 'Consultation' }, text: { no: 'Vi ser på hodeform, hårvekst og hverdag før saksen kommer fram.', en: 'We look at head shape, hair growth and your routine before the scissors come out.' } },

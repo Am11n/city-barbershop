@@ -2,6 +2,7 @@
 export const services = [
     {
         id: 'klipp',
+        category: 'hair',
         name: { no: 'Herreklipp', en: "Men's cut" },
         description: {
             no: 'Klipp med saks og maskin, vask og styling. Tilpasset hodeform og hverdag.',
@@ -12,6 +13,7 @@ export const services = [
     },
     {
         id: 'fade',
+        category: 'hair',
         name: { no: 'Skin Fade', en: 'Skin Fade' },
         description: {
             no: 'Ren overgang helt ned til huden. Finish med kniv langs linjene.',
@@ -23,6 +25,7 @@ export const services = [
     },
     {
         id: 'skjegg',
+        category: 'beard',
         name: { no: 'Skjeggtrim', en: 'Beard trim' },
         description: {
             no: 'Forming med maskin og saks, varmt håndkle og skjeggolje.',
@@ -33,6 +36,7 @@ export const services = [
     },
     {
         id: 'combo',
+        category: 'combo',
         name: { no: 'Klipp + skjegg', en: 'Cut + beard' },
         description: {
             no: 'Hele pakken: fade eller klipp, skjeggtrim og hot towel.',
@@ -43,6 +47,7 @@ export const services = [
     },
     {
         id: 'barn',
+        category: 'hair',
         name: { no: 'Barneklipp', en: 'Kids cut' },
         description: {
             no: 'For gutter under 12 år. Rolig tempo, samme presisjon.',
@@ -53,6 +58,7 @@ export const services = [
     },
     {
         id: 'barbering',
+        category: 'beard',
         name: { no: 'Klassisk barbering', en: 'Classic shave' },
         description: {
             no: 'Kniv, varme håndklær og balsam. Gammeldags, på den gode måten.',
@@ -61,4 +67,10 @@ export const services = [
         price: 450,
         duration: 30,
     },
+];
+
+export const serviceCategories = [
+    { id: 'hair', name: { no: 'Hår', en: 'Hair' } },
+    { id: 'beard', name: { no: 'Skjegg & barbering', en: 'Beard & shave' } },
+    { id: 'combo', name: { no: 'Kombo', en: 'Combo' } },
 ];

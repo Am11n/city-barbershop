@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, MapPin } from 'lucide-react';
+import OpenStatus from './OpenStatus';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -30,6 +31,7 @@ export default function Header() {
     const navItems = [
         { name: t('nav.services'), href: '#tjenester' },
         { name: t('nav.team'), href: '#team' },
+        { name: t('nav.gallery'), href: '#galleri' },
         { name: t('nav.reviews'), href: '#anmeldelser' },
         { name: t('nav.club'), href: '#club' },
         { name: t('nav.contact'), href: '#kontakt' },
@@ -44,6 +46,17 @@ export default function Header() {
 
     return (
         <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+            {/* Info bar: status, address and phone. Folds away once you scroll. */}
+            <div
+                className={`mx-auto hidden max-w-7xl items-center justify-between overflow-hidden px-5 text-xs text-bone/70 transition-all duration-500 lg:flex ${scrolled ? 'max-h-0 opacity-0' : 'mb-2 max-h-10 opacity-100'}`}
+            >
+                <OpenStatus className="border-transparent bg-transparent px-0" />
+                <div className="flex items-center gap-5">
+                    <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Tollbugata 14, 3044 Drammen</span>
+                    <span className="text-bone/40">{t('nav.closedSun')}</span>
+                    <a href="tel:+4746865541" className="inline-flex items-center gap-1.5 hover:text-bone"><Phone className="h-3.5 w-3.5" /> 468 65 541</a>
+                </div>
+            </div>
             <div
                 className={`mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border px-3 pl-4 transition-all duration-500 sm:px-4 sm:pl-5 ${scrolled || isOpen
                     ? 'border-white/10 bg-ink/75 shadow-2xl shadow-black/40 backdrop-blur-xl'
@@ -71,6 +84,13 @@ export default function Header() {
 
                 <div className="flex items-center gap-2">
                     <LangToggle className="hidden sm:flex" />
+                    <a
+                        href="tel:+4746865541"
+                        aria-label={t('nav.call')}
+                        className="hidden h-11 w-11 place-items-center rounded-full border border-white/10 text-bone/80 transition-colors hover:border-white/30 hover:text-bone md:grid"
+                    >
+                        <Phone className="h-4 w-4" />
+                    </a>
                     <button onClick={openBooking} className="btn-primary hidden px-5 py-2.5 sm:inline-flex">
                         {t('nav.book')} <ArrowUpRight className="h-4 w-4" />
                     </button>

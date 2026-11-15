@@ -19,7 +19,7 @@ export default function Experience() {
                     <p className="mt-6 max-w-md text-bone/65">{t('experience.lead')}</p>
                     <div className="relative mt-10 hidden aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem] lg:block">
                         <img
-                            src="/images/lounge.webp"
+                            src="/images/vaskeplass.webp"
                             alt={t('experience.imgAlt')}
                             loading="lazy"
                             className="h-full w-full object-cover"

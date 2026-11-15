@@ -1,19 +1,39 @@
 // UI copy. List-shaped content (services, team, FAQ, ...) lives in src/data with { no, en } fields.
 export const strings = {
     no: {
-        nav: { services: 'Tjenester', team: 'Barberne', club: 'City Club', reviews: 'Anmeldelser', contact: 'Finn oss', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
+        nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', club: 'City Club', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', closedSun: 'Søndag stengt', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
         status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
         hero: {
             l1: 'Skarp.', l2: 'Ren.', l3: 'din.',
             lead: 'Fades, klassisk klipp og skjeggtrim midt i Drammen sentrum. Velg barber og tid på nett. Det tar under ett minutt.',
             cta: 'Book time nå', prices: 'Se priser',
             statOnline: 'Nettbooking', statBarbers: 'Barberere', statRating: 'på Google',
+            pause: 'Pause video', play: 'Spill av video',
         },
         marquee: ['Skin fade', 'Skjeggtrim', 'Hot towel', 'Klassisk barbering', 'Taper', 'Barneklipp', 'Drop-in når det er ledig'],
         services: {
             eyebrow: 'Tjenester & priser', h1: 'Hva skal vi', h2: 'gjøre', h3: 'i dag?',
             lead: 'Faste priser, ingen overraskelser. Trykk på en tjeneste for å finne ledig tid. Du velger barber i neste steg.',
-            popular: 'Mest booket', min: 'min', currency: 'kr',
+            popular: 'Mest booket', min: 'min', currency: 'kr', count: 'tjenester', bestValue: 'Mest for pengene',
+            note: 'Prisene er veiledende. Endelig pris og ledige tider ser du når du booker.',
+        },
+        craft: {
+            eyebrow: 'Håndverket', h1: 'Det du kjenner', h2: 'når du reiser deg.',
+            lead: 'Hver klipp er et lite håndverk, fra første strøk med maskinen til siste finish. Bildene er fra stolene våre.',
+        },
+        gallery: {
+            eyebrow: 'Galleri', h1: 'Fra', h2: 'stolen.',
+            lead: 'Ekte klipp fra City Barbershop. Ingen stockbilder.', prev: 'Forrige bilder', next: 'Neste bilder',
+        },
+        stats: {
+            label: 'City Barbershop i tall', h1: 'Bygget på', h2: 'fornøyde kunder.', decimal: ',',
+            rating: 'Snitt på Google', reviews: 'Anmeldelser', barbers: 'Barberere', days: 'Dager åpent i uka',
+        },
+        products: {
+            eyebrow: 'I hylla', h1: 'Ta med', h2: 'deg looken hjem.',
+            lead: 'Produktene vi bruker i stolen, kan du også kjøpe i salongen. Barberen forteller hva som passer håret og skjegget ditt.',
+            points: ['Skjeggolje, balm og shampoo', 'Voks, pomade og styling', 'Råd fra barberen, uten salgsprat'],
+            shelf: 'I hylla nå', imgAlt: 'Produktutstilling med skjegg- og hårprodukter i City Barbershop',
         },
         experience: {
             eyebrow: 'Opplevelsen', h1: 'Mer enn', h2: 'en klipp.',
@@ -53,25 +73,46 @@ export const strings = {
             eyebrow: 'Finn oss', h1: 'Midt i', h2: 'Drammen.',
             address: 'Adresse', directions: 'Veibeskrivelse', phone: 'Telefon', phoneSub: 'Ring for drop-in', callNow: 'Ring nå',
             hours: 'Åpningstider', today: 'i dag', mapTitle: 'Kart som viser City Barbershop i Tollbugata 14, Drammen',
+            lookFor: 'Se etter skiltet', storefront: 'Det røde trehuset i Tollbugata', storefrontAlt: 'Fasaden til City Barbershop i Tollbugata 14, et rødt trehus med CITY BARBER i vinduene',
         },
         footer: { ready: 'Klar for en ny sveis?', cta: 'Book time' },
         mobile: { call: 'Ring City Barbershop' },
         intro: 'Drammen · Est. 2024',
     },
     en: {
-        nav: { services: 'Services', team: 'Barbers', club: 'City Club', reviews: 'Reviews', contact: 'Visit', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
+        nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', club: 'City Club', reviews: 'Reviews', contact: 'Visit', call: 'Call us', closedSun: 'Closed Sundays', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
         status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
         hero: {
             l1: 'Sharp.', l2: 'Clean.', l3: 'yours.',
             lead: 'Fades, classic cuts and beard trims in the heart of Drammen. Pick your barber and time online. It takes less than a minute.',
             cta: 'Book now', prices: 'See prices',
             statOnline: 'Online booking', statBarbers: 'Barbers', statRating: 'on Google',
+            pause: 'Pause video', play: 'Play video',
         },
         marquee: ['Skin fade', 'Beard trim', 'Hot towel', 'Classic shave', 'Taper', 'Kids cut', 'Walk-ins when available'],
         services: {
             eyebrow: 'Services & prices', h1: 'What are we', h2: 'doing', h3: 'today?',
             lead: 'Fixed prices, no surprises. Tap a service to find an open slot. You choose your barber in the next step.',
-            popular: 'Most booked', min: 'min', currency: 'NOK',
+            popular: 'Most booked', min: 'min', currency: 'NOK', count: 'services', bestValue: 'Best value',
+            note: 'Prices are a guide. You see the final price and open slots when you book.',
+        },
+        craft: {
+            eyebrow: 'The craft', h1: 'What you feel', h2: 'when you stand up.',
+            lead: 'Every cut is a small piece of craft, from the first pass of the clippers to the final finish. These photos are from our chairs.',
+        },
+        gallery: {
+            eyebrow: 'Gallery', h1: 'From', h2: 'the chair.',
+            lead: 'Real cuts from City Barbershop. No stock photos.', prev: 'Previous photos', next: 'Next photos',
+        },
+        stats: {
+            label: 'City Barbershop in numbers', h1: 'Built on', h2: 'happy clients.', decimal: '.',
+            rating: 'Google rating', reviews: 'Reviews', barbers: 'Barbers', days: 'Days open a week',
+        },
+        products: {
+            eyebrow: 'On the shelf', h1: 'Take the', h2: 'look home.',
+            lead: 'The products we use in the chair are also for sale in the shop. Your barber will tell you what suits your hair and beard.',
+            points: ['Beard oil, balm and shampoo', 'Wax, pomade and styling', 'Advice from your barber, no sales talk'],
+            shelf: 'On the shelf now', imgAlt: 'Product display with beard and hair products at City Barbershop',
         },
         experience: {
             eyebrow: 'The experience', h1: 'More than', h2: 'a haircut.',
@@ -111,6 +152,7 @@ export const strings = {
             eyebrow: 'Visit us', h1: 'Right in', h2: 'Drammen.',
             address: 'Address', directions: 'Directions', phone: 'Phone', phoneSub: 'Call for walk-ins', callNow: 'Call now',
             hours: 'Opening hours', today: 'today', mapTitle: 'Map showing City Barbershop at Tollbugata 14, Drammen',
+            lookFor: 'Look for the sign', storefront: 'The red wooden house on Tollbugata', storefrontAlt: 'The City Barbershop storefront at Tollbugata 14, a red wooden house with CITY BARBER in the windows',
         },
         footer: { ready: 'Ready for a fresh cut?', cta: 'Book now' },
         mobile: { call: 'Call City Barbershop' },
