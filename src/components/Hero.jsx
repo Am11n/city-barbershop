@@ -64,7 +64,8 @@ export default function Hero() {
                 )}
                 {/* Light at the top so the video shows; dark at the bottom where the text sits */}
                 <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink/70 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_center,rgba(11,11,12,.6),transparent)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(224,38,47,.22),transparent_50%)]" />
             </div>
 
@@ -82,24 +83,24 @@ export default function Hero() {
                 <div className="pole-stripes animate-pole h-full w-full opacity-90" />
             </div>
 
-            <div className="container-x flex flex-1 flex-col justify-end pb-16 pt-32 sm:pb-14">
-                <div className="max-w-4xl">
+            <div className="container-x flex flex-1 flex-col items-center justify-center pb-16 pt-32 text-center">
+                <div className="flex max-w-4xl flex-col items-center">
                     <OpenStatus className="animate-rise" />
 
                     <h1 key={lang} className="animate-rise mt-5 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
                         City <span className="text-pole">Barbershop</span>
                     </h1>
 
-                    <p className="animate-rise mt-5 max-w-md text-base leading-relaxed text-bone/80 sm:text-lg" style={{ animationDelay: '.2s' }}>
-                        {t('hero.lead')}
-                    </p>
-
-                    <div className="animate-rise mt-7 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '.3s' }}>
+                    <div className="animate-rise mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row" style={{ animationDelay: '.2s' }}>
                         <button onClick={openBooking} className="btn-primary px-7 py-3.5 text-base">
                             {t('hero.cta')} <ArrowUpRight className="h-5 w-5" />
                         </button>
                         <a href="#tjenester" className="btn-ghost px-7 py-3.5 text-base">{t('hero.prices')}</a>
                     </div>
+
+                    <p className="animate-rise mt-6 max-w-md text-base leading-relaxed text-bone/80 sm:text-lg" style={{ animationDelay: '.3s' }}>
+                        {t('hero.lead')}
+                    </p>
                 </div>
             </div>
         </section>
