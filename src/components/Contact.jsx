@@ -8,7 +8,7 @@ export default function Contact() {
     const today = new Date().getDay();
 
     return (
-        <section id="kontakt" className="bg-coal py-24 sm:py-32">
+        <section id="kontakt" className="bg-coal pb-16 pt-24 sm:pb-20 sm:pt-32">
             <div className="container-x grid gap-10 lg:grid-cols-2 lg:gap-16">
                 <div className="reveal">
                     <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('contact.eyebrow')}</span>
