@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Star, ArrowUpRight, PenLine } from 'lucide-react';
 import { useLang } from '../i18n/LanguageContext';
 import { google } from '../data/team';
+import { featuredReviews } from '../data/reviews';
 
 // Live Google reviews via /api/reviews (Vercel function). If the API is not
 // configured, the section still shows the real rating summary from Google.
@@ -40,13 +41,14 @@ function GoogleG() {
 }
 
 export default function Reviews() {
-    const { t, lang } = useLang();
+    const { t, lang, L } = useLang();
     const live = useGoogleReviews(lang);
 
     const rating = live?.rating ?? google.rating;
     const count = live?.count ?? google.count;
     const url = live?.url ?? google.mapsUrl;
-    const reviews = live?.reviews ?? [];
+    // Live reviews when the Places API is configured, otherwise three curated ones.
+    const reviews = (live?.reviews?.length ? live.reviews : featuredReviews.map((r) => ({ ...r, when: L(r.when) }))).slice(0, 3);
 
     return (
         <section id="anmeldelser" className="relative overflow-hidden py-24 sm:py-32">
@@ -71,7 +73,7 @@ export default function Reviews() {
                         </span>
                         <span>
                             <span className="flex items-center gap-3">
-                                <span className="font-display text-5xl leading-none">{Number(rating).toFixed(1)}</span>
+                                <span className="font-display text-5xl leading-none">{Number(rating).toFixed(1).replace('.', t('stats.decimal'))}</span>
                                 <Stars value={rating} className="h-5 w-5" />
                             </span>
                             <span className="mt-1 block text-sm text-bone/60">
@@ -83,11 +85,15 @@ export default function Reviews() {
                 </div>
 
                 {reviews.length > 0 && (
-                    <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                        {reviews.slice(0, 6).map((r, i) => (
-                            <figure
+                    <div className="reveal mt-14 grid gap-5 md:grid-cols-3">
+                        {reviews.map((r, i) => (
+                            <a
                                 key={`${r.author}-${i}`}
-                                className="reveal is-visible flex flex-col rounded-[2rem] border border-white/10 bg-steel p-7"
+                                href={r.url ?? url}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={`${t('reviews.readOn')}: ${r.author}`}
+                                className="group flex flex-col rounded-[2rem] border border-white/10 bg-steel p-7 transition-colors hover:border-white/25"
                             >
                                 <div className="flex items-center justify-between">
                                     <Stars value={r.rating} />
@@ -96,20 +102,19 @@ export default function Reviews() {
                                 <blockquote className="mt-5 flex-1 text-bone/85 [display:-webkit-box] [-webkit-line-clamp:7] [-webkit-box-orient:vertical] overflow-hidden">
                                     “{r.text}”
                                 </blockquote>
-                                <figcaption className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                                <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
                                     {r.photo ? (
                                         <img src={r.photo} alt="" referrerPolicy="no-referrer" className="h-9 w-9 rounded-full object-cover" />
                                     ) : (
                                         <span className="grid h-9 w-9 place-items-center rounded-full bg-pole font-semibold">{r.author[0]}</span>
                                     )}
-                                    <span className="min-w-0">
-                                        <a href={r.authorUrl ?? url} target="_blank" rel="noreferrer" className="block truncate font-semibold hover:underline">
-                                            {r.author}
-                                        </a>
-                                        <span className="text-xs text-mute">Google</span>
+                                    <span className="min-w-0 flex-1">
+                                        <span className="block truncate font-semibold">{r.author}</span>
+                                        <span className="text-xs text-mute">{t('reviews.readOn')}</span>
                                     </span>
-                                </figcaption>
-                            </figure>
+                                    <ArrowUpRight className="h-5 w-5 shrink-0 text-mute transition-transform group-hover:rotate-45 group-hover:text-bone" />
+                                </div>
+                            </a>
                         ))}
                     </div>
                 )}

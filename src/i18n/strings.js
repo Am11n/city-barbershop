@@ -44,7 +44,7 @@ export const strings = {
             eyebrow: 'Anmeldelser', h1: 'Kundene', h2: 'sier det', h3: 'best.',
             basedOn: 'basert på', reviewsWord: 'anmeldelser på Google',
             seeAll: 'Les alle på Google', write: 'Skriv en anmeldelse',
-            source: 'Anmeldelser hentet direkte fra Google',
+            source: 'Anmeldelser hentet direkte fra Google', readOn: 'Les på Google',
         },
         booking: {
             eyebrow: 'Booking', h1: 'Finn tid.', h2: 'Ferdig.',
@@ -115,7 +115,7 @@ export const strings = {
             eyebrow: 'Reviews', h1: 'Our clients', h2: 'say it', h3: 'best.',
             basedOn: 'based on', reviewsWord: 'reviews on Google',
             seeAll: 'Read all on Google', write: 'Write a review',
-            source: 'Reviews pulled directly from Google',
+            source: 'Reviews pulled directly from Google', readOn: 'Read on Google',
         },
         booking: {
             eyebrow: 'Booking', h1: 'Find a time.', h2: 'Done.',
