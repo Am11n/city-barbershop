@@ -1,7 +1,7 @@
 // UI copy. List-shaped content (services, team, FAQ, ...) lives in src/data with { no, en } fields.
 export const strings = {
     no: {
-        nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
+        nav: { services: 'Tjenester', team: 'Team', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
         status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
         hero: {
             lead: 'Fades, klassisk klipp og skjeggtrim. Book på under ett minutt.',
@@ -38,7 +38,7 @@ export const strings = {
             lead: 'Hver time følger det samme ritualet. Det er derfor kundene kommer tilbake, og derfor tar vi oss betalt for det.',
             imgAlt: 'Loungen og barberstolene i City Barbershop',
         },
-        team: { eyebrow: 'Barberne', h1: 'Stolene', h2: 'og', h3: 'hendene.', instagram: 'Følg på Instagram', bookWith: 'Book time hos', work: 'Arbeid fra City Barbershop' },
+        team: { eyebrow: 'Team', h1: 'Stolene', h2: 'og', h3: 'hendene.', instagram: 'Følg på Instagram', bookWith: 'Book time hos', work: 'Arbeid fra City Barbershop' },
         reviews: {
             eyebrow: 'Anmeldelser', h1: 'Kundene', h2: 'sier det', h3: 'best.',
             basedOn: 'basert på', reviewsWord: 'anmeldelser på Google',
@@ -70,7 +70,7 @@ export const strings = {
         mobile: { call: 'Ring City Barbershop' },
     },
     en: {
-        nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
+        nav: { services: 'Services', team: 'Team', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
         status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
         hero: {
             lead: 'Fades, classic cuts and beard trims. Book in under a minute.',
@@ -107,7 +107,7 @@ export const strings = {
             lead: 'Every appointment follows the same ritual. That is why clients come back, and why it is worth the price.',
             imgAlt: 'The lounge and barber chairs at City Barbershop',
         },
-        team: { eyebrow: 'The barbers', h1: 'The chairs', h2: 'and', h3: 'the hands.', instagram: 'Follow on Instagram', bookWith: 'Book with', work: 'Work from City Barbershop' },
+        team: { eyebrow: 'Team', h1: 'The chairs', h2: 'and', h3: 'the hands.', instagram: 'Follow on Instagram', bookWith: 'Book with', work: 'Work from City Barbershop' },
         reviews: {
             eyebrow: 'Reviews', h1: 'Our clients', h2: 'say it', h3: 'best.',
             basedOn: 'based on', reviewsWord: 'reviews on Google',
