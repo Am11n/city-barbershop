@@ -19,7 +19,7 @@ export default function StatsBanner() {
             <div className="reveal relative isolate mx-auto flex min-h-[520px] max-w-[96rem] flex-col justify-between overflow-hidden rounded-[2.5rem] p-8 sm:p-14">
                 <img
                     src="/images/salong-2000.webp"
-                    srcSet="/images/salong-1200.webp 1200w, /images/salong-2000.webp 2000w"
+                    srcSet="/images/salong-800.webp 800w, /images/salong-1200.webp 1200w, /images/salong-2000.webp 2000w"
                     sizes="100vw"
                     alt=""
                     loading="lazy"

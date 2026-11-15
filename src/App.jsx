@@ -14,7 +14,6 @@ import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
-import Intro from './components/Intro';
 import BookingDrawer from './components/BookingDrawer';
 import MobileBookBar from './components/MobileBookBar';
 import ScrollPole from './components/ScrollPole';
@@ -27,7 +26,6 @@ function Page() {
 
   return (
     <div className="min-h-screen bg-ink text-bone">
-      <Intro />
       <SEO />
       <Header />
       <ScrollPole />

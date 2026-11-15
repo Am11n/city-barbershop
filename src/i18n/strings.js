@@ -69,7 +69,6 @@ export const strings = {
             lookFor: 'Se etter skiltet', storefront: 'Det røde trehuset i Tollbugata', storefrontAlt: 'Fasaden til City Barbershop i Tollbugata 14, et rødt trehus med CITY BARBER i vinduene',
         },
         mobile: { call: 'Ring City Barbershop' },
-        intro: 'Drammen · Est. 2024',
     },
     en: {
         nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
@@ -140,6 +139,5 @@ export const strings = {
             lookFor: 'Look for the sign', storefront: 'The red wooden house on Tollbugata', storefrontAlt: 'The City Barbershop storefront at Tollbugata 14, a red wooden house with CITY BARBER in the windows',
         },
         mobile: { call: 'Call City Barbershop' },
-        intro: 'Drammen · Est. 2024',
     },
 };

@@ -16,7 +16,12 @@ function initialLang() {
 }
 
 export function LanguageProvider({ children }) {
-    const [lang, setLangState] = useState(initialLang);
+    // Start in Norwegian (matches the prerendered HTML), then apply ?lang= or the saved choice.
+    const [lang, setLangState] = useState('no');
+    useEffect(() => {
+        const l = initialLang();
+        if (l !== 'no') setLangState(l);
+    }, []);
 
     useEffect(() => {
         document.documentElement.lang = lang === 'no' ? 'nb' : 'en';

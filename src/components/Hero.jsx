@@ -35,17 +35,27 @@ export default function Hero() {
     const { openBooking } = useBooking();
     const { t, lang } = useLang();
     const video = useHeroVideo();
+    const [started, setStarted] = useState(false);
 
     return (
         <section id="top" className="grain relative isolate flex min-h-[100svh] flex-col overflow-hidden">
             <div className="absolute inset-0 -z-10">
-                {video.enabled ? (
+                {/* The still is the first paint (and LCP); the video fades in over it once it plays. */}
+                <img
+                    src="/images/salong-2000.webp"
+                    srcSet="/images/salong-800.webp 800w, /images/salong-1200.webp 1200w, /images/salong-2000.webp 2000w"
+                    sizes="100vw"
+                    alt=""
+                    className="h-full w-full object-cover object-center"
+                    loading="eager"
+                    fetchpriority="high"
+                />
+                {video.enabled && (
                     <video
                         ref={video.ref}
-                        className="h-full w-full object-cover object-center"
+                        className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${started ? 'opacity-100' : 'opacity-0'}`}
                         key={video.variant}
                         src={`/video/hero-${video.variant}.mp4`}
-                        poster={`/images/hero-poster-${video.variant}.webp`}
                         autoPlay
                         muted
                         loop
@@ -53,17 +63,8 @@ export default function Hero() {
                         aria-hidden="true"
                         onLoadedMetadata={(e) => { e.currentTarget.defaultPlaybackRate = PLAYBACK_RATE; e.currentTarget.playbackRate = PLAYBACK_RATE; }}
                         onPlay={(e) => { e.currentTarget.playbackRate = PLAYBACK_RATE; video.setPlaying(true); }}
+                        onPlaying={() => setStarted(true)}
                         onPause={() => video.setPlaying(false)}
-                    />
-                ) : (
-                    <img
-                        src="/images/salong-2000.webp"
-                        srcSet="/images/salong-1200.webp 1200w, /images/salong-2000.webp 2000w"
-                        sizes="100vw"
-                        alt=""
-                        className="h-full w-full scale-105 object-cover object-center"
-                        loading="eager"
-                        fetchpriority="high"
                     />
                 )}
                 {/* Light at the top so the video shows; dark at the bottom where the text sits */}

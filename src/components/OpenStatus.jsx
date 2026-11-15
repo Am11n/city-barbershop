@@ -25,13 +25,16 @@ function getStatus(t, now = new Date()) {
 
 export default function OpenStatus({ className = '' }) {
     const { t } = useLang();
-    const [now, setNow] = useState(() => new Date());
+    // Unknown until mounted: the prerendered HTML is built at a different time.
+    const [now, setNow] = useState(null);
 
     useEffect(() => {
+        setNow(new Date());
         const id = setInterval(() => setNow(new Date()), 60_000);
         return () => clearInterval(id);
     }, []);
 
+    if (!now) return <span className={`inline-block h-[30px] ${className}`} aria-hidden="true" />;
     const status = getStatus(t, now);
 
     return (

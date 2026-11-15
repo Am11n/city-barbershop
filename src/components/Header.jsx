@@ -51,7 +51,7 @@ export default function Header() {
                     }`}
             >
                 <a href="#top" className="flex items-center gap-3" aria-label={t('nav.toTop')}>
-                    <img src="/logo.png" alt="City Barbershop Drammen" className="h-14 w-14 rounded-full object-cover ring-1 ring-white/15 sm:h-16 sm:w-16" />
+                    <img src="/logo-256.webp" alt="City Barbershop Drammen" className="h-14 w-14 rounded-full object-cover ring-1 ring-white/15 sm:h-16 sm:w-16" />
                 </a>
 
                 <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">

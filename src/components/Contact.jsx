@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
 import { hours, fmtTime, google } from '../data/team';
 import { useLang } from '../i18n/LanguageContext';
@@ -5,7 +6,8 @@ import OpenStatus from './OpenStatus';
 
 export default function Contact() {
     const { t, L } = useLang();
-    const today = new Date().getDay();
+    const [today, setToday] = useState(null);
+    useEffect(() => setToday(new Date().getDay()), []);
 
     return (
         <section id="kontakt" className="bg-coal pb-16 pt-24 sm:pb-20 sm:pt-32">
