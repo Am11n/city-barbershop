@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { ArrowLeft, ArrowRight, Instagram } from 'lucide-react';
-import { gallery } from '../data/team';
+import { gallery, instagramUrl } from '../data/team';
 import { useLang } from '../i18n/LanguageContext';
 
 // "Fra stolen": real work from the salon in a swipeable strip.
@@ -24,7 +24,7 @@ export default function Gallery() {
                     <p className="mt-4 max-w-md text-bone/65">{t('gallery.lead')}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="btn-ghost px-5 py-3">
+                    <a href={instagramUrl} target="_blank" rel="noreferrer" className="btn-ghost px-5 py-3">
                         <Instagram className="h-4 w-4" /> {t('team.instagram')}
                     </a>
                     <button onClick={() => scroll(-1)} aria-label={t('gallery.prev')} className="hidden h-12 w-12 place-items-center rounded-full border border-white/15 transition-colors hover:border-white/40 sm:grid">

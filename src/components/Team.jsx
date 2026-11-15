@@ -1,5 +1,5 @@
 import { ArrowUpRight, Instagram } from 'lucide-react';
-import { team } from '../data/team';
+import { team, instagramUrl } from '../data/team';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -18,7 +18,7 @@ export default function Team() {
                             <span className="font-serif normal-case italic text-pole">{t('team.h2')}</span> {t('team.h3')}
                         </h2>
                     </div>
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="btn-ghost self-start sm:self-auto">
+                    <a href={instagramUrl} target="_blank" rel="noreferrer" className="btn-ghost self-start sm:self-auto">
                         <Instagram className="h-4 w-4" /> {t('team.instagram')}
                     </a>
                 </div>

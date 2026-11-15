@@ -1,4 +1,5 @@
 import { Instagram } from 'lucide-react';
+import { instagramUrl } from '../data/team';
 
 // Slim footer that continues the "Finn oss" section (same background).
 export default function Footer() {
@@ -10,7 +11,7 @@ export default function Footer() {
                     <span>© {new Date().getFullYear()} City Barbershop · Tollbugata 14, 3044 Drammen</span>
                 </div>
                 <div className="flex items-center gap-6">
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-bone">
+                    <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-bone">
                         <Instagram className="h-4 w-4" /> Instagram
                     </a>
                     <a href="tel:+4746865541" className="hover:text-bone">468 65 541</a>
