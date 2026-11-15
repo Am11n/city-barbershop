@@ -25,7 +25,7 @@ export const strings = {
             lead: 'Ekte klipp fra City Barbershop. Ingen stockbilder.', prev: 'Forrige bilder', next: 'Neste bilder',
         },
         stats: {
-            label: 'City Barbershop i tall', h1: 'Bygget på', h2: 'fornøyde kunder.', decimal: ',',
+            label: 'City Barbershop i tall', decimal: ',',
             rating: 'Snitt på Google', reviews: 'Anmeldelser', barbers: 'Barberere', days: 'Dager åpent i uka',
         },
         products: {
@@ -95,7 +95,7 @@ export const strings = {
             lead: 'Real cuts from City Barbershop. No stock photos.', prev: 'Previous photos', next: 'Next photos',
         },
         stats: {
-            label: 'City Barbershop in numbers', h1: 'Built on', h2: 'happy clients.', decimal: '.',
+            label: 'City Barbershop in numbers', decimal: '.',
             rating: 'Google rating', reviews: 'Reviews', barbers: 'Barbers', days: 'Days open a week',
         },
         products: {

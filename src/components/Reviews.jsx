@@ -5,7 +5,7 @@ import { google } from '../data/team';
 import { featuredReviews } from '../data/reviews';
 
 // Live Google reviews via /api/reviews (Vercel function). If the API is not
-// configured, the section still shows the real rating summary from Google.
+// configured, the section shows three curated reviews (src/data/reviews.js).
 function useGoogleReviews(lang) {
     const [data, setData] = useState(null);
     useEffect(() => {
@@ -44,16 +44,14 @@ export default function Reviews() {
     const { t, lang, L } = useLang();
     const live = useGoogleReviews(lang);
 
-    const rating = live?.rating ?? google.rating;
-    const count = live?.count ?? google.count;
     const url = live?.url ?? google.mapsUrl;
     // Live reviews when the Places API is configured, otherwise three curated ones.
     const reviews = (live?.reviews?.length ? live.reviews : featuredReviews.map((r) => ({ ...r, when: L(r.when) }))).slice(0, 3);
 
     return (
-        <section id="anmeldelser" className="relative overflow-hidden py-24 sm:py-32">
+        <section id="anmeldelser" className="relative overflow-hidden pb-24 pt-16 sm:pb-32 sm:pt-20">
             <div className="container-x">
-                <div className="reveal grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+                <div className="reveal">
                     <div>
                         <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('reviews.eyebrow')}</span>
                         <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
@@ -62,26 +60,6 @@ export default function Reviews() {
                         </h2>
                     </div>
 
-                    <a
-                        href={url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="group flex items-center gap-5 rounded-3xl border border-white/10 bg-steel p-5 pr-7 transition-colors hover:border-white/25"
-                    >
-                        <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white">
-                            <GoogleG />
-                        </span>
-                        <span>
-                            <span className="flex items-center gap-3">
-                                <span className="font-display text-5xl leading-none">{Number(rating).toFixed(1).replace('.', t('stats.decimal'))}</span>
-                                <Stars value={rating} className="h-5 w-5" />
-                            </span>
-                            <span className="mt-1 block text-sm text-bone/60">
-                                {t('reviews.basedOn')} {count} {t('reviews.reviewsWord')}
-                            </span>
-                        </span>
-                        <ArrowUpRight className="h-5 w-5 text-mute transition-transform group-hover:rotate-45 group-hover:text-bone" />
-                    </a>
                 </div>
 
                 {reviews.length > 0 && (
@@ -121,7 +99,7 @@ export default function Reviews() {
 
                 <div className="reveal mt-10 flex flex-wrap items-center gap-3">
                     <a href={url} target="_blank" rel="noreferrer" className="btn-ghost">
-                        {t('reviews.seeAll')} <ArrowUpRight className="h-4 w-4" />
+                        <GoogleG /> {t('reviews.seeAll')} <ArrowUpRight className="h-4 w-4" />
                     </a>
                     <a href={url} target="_blank" rel="noreferrer" className="btn-ghost">
                         <PenLine className="h-4 w-4" /> {t('reviews.write')}
