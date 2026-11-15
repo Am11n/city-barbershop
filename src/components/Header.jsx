@@ -57,16 +57,13 @@ export default function Header() {
                 </div>
             </div>
             <div
-                className={`mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border px-3 pl-4 transition-all duration-500 sm:px-4 sm:pl-5 ${scrolled || isOpen
+                className={`mx-auto flex h-[68px] max-w-7xl items-center justify-between rounded-full border px-3 pl-1.5 transition-all duration-500 sm:h-[76px] sm:px-4 sm:pl-1.5 ${scrolled || isOpen
                     ? 'border-white/10 bg-ink/75 shadow-2xl shadow-black/40 backdrop-blur-xl'
                     : 'border-transparent bg-transparent'
                     }`}
             >
                 <a href="#top" className="flex items-center gap-3" aria-label={t('nav.toTop')}>
-                    <img src="/logo.png" alt="" className="h-10 w-10 rounded-full object-cover ring-1 ring-white/15" />
-                    <span className="font-display text-xl uppercase leading-none tracking-wide">
-                        City <span className="text-pole">Barbershop</span>
-                    </span>
+                    <img src="/logo.png" alt="City Barbershop Drammen" className="h-14 w-14 rounded-full object-cover ring-1 ring-white/15 sm:h-16 sm:w-16" />
                 </a>
 
                 <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">

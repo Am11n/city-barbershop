@@ -4,7 +4,6 @@ export const strings = {
         nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', closedSun: 'Søndag stengt', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
         status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
         hero: {
-            l1: 'Skarp.', l2: 'Ren.', l3: 'din.',
             lead: 'Fades, klassisk klipp og skjeggtrim. Book på under ett minutt.',
             cta: 'Book time nå', prices: 'Se priser',
             statOnline: 'Nettbooking', statBarbers: 'Barberere', statRating: 'på Google',
@@ -77,7 +76,6 @@ export const strings = {
         nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', closedSun: 'Closed Sundays', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
         status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
         hero: {
-            l1: 'Sharp.', l2: 'Clean.', l3: 'yours.',
             lead: 'Fades, classic cuts and beard trims. Book in under a minute.',
             cta: 'Book now', prices: 'See prices',
             statOnline: 'Online booking', statBarbers: 'Barbers', statRating: 'on Google',
