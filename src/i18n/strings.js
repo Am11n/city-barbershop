@@ -1,7 +1,7 @@
 // UI copy. List-shaped content (services, team, FAQ, ...) lives in src/data with { no, en } fields.
 export const strings = {
     no: {
-        nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', closedSun: 'Søndag stengt', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
+        nav: { services: 'Tjenester', team: 'Barberne', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
         status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
         hero: {
             lead: 'Fades, klassisk klipp og skjeggtrim. Book på under ett minutt.',
@@ -73,7 +73,7 @@ export const strings = {
         intro: 'Drammen · Est. 2024',
     },
     en: {
-        nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', closedSun: 'Closed Sundays', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
+        nav: { services: 'Services', team: 'Barbers', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
         status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
         hero: {
             lead: 'Fades, classic cuts and beard trims. Book in under a minute.',

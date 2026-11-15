@@ -52,7 +52,6 @@ export default function Header() {
                 <OpenStatus className="border-transparent bg-transparent px-0" />
                 <div className="flex items-center gap-5">
                     <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Tollbugata 14, 3044 Drammen</span>
-                    <span className="text-bone/40">{t('nav.closedSun')}</span>
                     <a href="tel:+4746865541" className="inline-flex items-center gap-1.5 hover:text-bone"><Phone className="h-3.5 w-3.5" /> 468 65 541</a>
                 </div>
             </div>
