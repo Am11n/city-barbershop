@@ -1,8 +1,8 @@
 // TeqBook booking configuration.
 //
-// The prototype points at TeqBook *staging*. Override with env vars:
-//   VITE_TEQBOOK_BASE_URL     (default https://staging.teqbook.com)
-//   VITE_TEQBOOK_SALON_SLUG   (default drammen-frisor — demo salon on staging)
+// Points at the live City Barbershop salon on TeqBook production. Override with env vars:
+//   VITE_TEQBOOK_BASE_URL     (default https://teqbook.com; https://staging.teqbook.com for testing)
+//   VITE_TEQBOOK_SALON_SLUG   (default city-barbershop-drammen; drammen-frisor is the staging demo salon)
 //   VITE_TEQBOOK_FORCE_EMBED  ("true" to always try the iframe)
 //
 // TeqBook's CSP (frame-ancestors) only allows the booking page to be framed from
@@ -10,11 +10,11 @@
 // site falls back to opening the booking flow in a new tab.
 
 export const TEQBOOK_BASE_URL = (
-  import.meta.env.VITE_TEQBOOK_BASE_URL || 'https://staging.teqbook.com'
+  import.meta.env.VITE_TEQBOOK_BASE_URL || 'https://teqbook.com'
 ).replace(/\/$/, '');
 
 export const TEQBOOK_SALON_SLUG =
-  import.meta.env.VITE_TEQBOOK_SALON_SLUG || 'drammen-frisor';
+  import.meta.env.VITE_TEQBOOK_SALON_SLUG || 'city-barbershop-drammen';
 
 export const BOOKING_URL = `${TEQBOOK_BASE_URL}/book/${TEQBOOK_SALON_SLUG}`;
 
