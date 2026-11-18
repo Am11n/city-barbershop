@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
-import { BOOKING_URL } from '../config/booking';
+import { EMBED_URL } from '../config/booking';
 import { useLang } from '../i18n/LanguageContext';
 
-// The TeqBook public booking flow, framed. Only rendered where TeqBook's
-// frame-ancestors CSP allows it (see config/booking.js).
+// The TeqBook booking flow, framed via TeqBook's embeddable /embed route
+// (see config/booking.js).
 export default function TeqBookFrame({ className = '' }) {
     const [loaded, setLoaded] = useState(false);
     const { t } = useLang();
@@ -20,7 +20,7 @@ export default function TeqBookFrame({ className = '' }) {
                 </div>
             )}
             <iframe
-                src={BOOKING_URL}
+                src={EMBED_URL}
                 title={t('booking.frameTitle')}
                 className="h-full w-full border-0"
                 loading="lazy"

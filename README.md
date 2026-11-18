@@ -92,16 +92,15 @@ Prosjektet er klargjort for enkel deployment til tjenester som Vercel eller Netl
 
 Dette prosjektet er utviklet for City Barbershop Drammen.
 
-## 📅 TeqBook-booking (prototype)
+## 📅 TeqBook-booking
 
-Bookingen bruker TeqBook sin offentlige bookingside (`/book/<slug>`), satt opp mot **staging**.
+Bookingen bruker TeqBook **produksjon** (salong `city-barbershop-drammen`). Bookinger er ekte.
 
 | Env-variabel | Standard | Beskrivelse |
 | --- | --- | --- |
-| `VITE_TEQBOOK_BASE_URL` | `https://staging.teqbook.com` | TeqBook-miljø |
-| `VITE_TEQBOOK_SALON_SLUG` | `drammen-frisor` | Salongens slug i TeqBook (bytt til City Barbershop når salongen er opprettet) |
-| `VITE_TEQBOOK_FORCE_EMBED` | – | `true` for å alltid prøve iframe |
+| `VITE_TEQBOOK_BASE_URL` | `https://teqbook.com` | TeqBook-miljø (`https://staging.teqbook.com` for testing) |
+| `VITE_TEQBOOK_SALON_SLUG` | `city-barbershop-drammen` | Salongens slug i TeqBook (`drammen-frisor` er demosalongen på staging) |
+| `VITE_TEQBOOK_DISABLE_EMBED` | – | `true` for å alltid åpne bookingen i ny fane |
 
-TeqBook tillater bare at bookingsiden bygges inn (iframe) fra TeqBook-domener og `*.vercel.app`.
-Deploy prototypen til Vercel for å vise bookingen innebygd. På `localhost` åpnes bookingen i ny fane.
-Legg til `?embed=1` / `?embed=0` i URL-en for å overstyre.
+Iframen bruker TeqBook sin `/embed/<slug>/`-rute, som kan bygges inn på alle domener (også `localhost`).
+Lenker som åpner i ny fane bruker `/book/<slug>`. Legg til `?embed=0` i URL-en for å slå av iframen.
