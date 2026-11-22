@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/en", "destination": "/?lang=en", "permanent": true },
+    { "source": "/en/:path*", "destination": "/?lang=en", "permanent": true },
+    { "source": "/book-online", "destination": "/#booking", "permanent": true },
+    { "source": "/booking-calendar/:path*", "destination": "/#booking", "permanent": true },
+    { "source": "/service-page/:path*", "destination": "/#tjenester", "permanent": true },
+    { "source": "/(services|tjenester|priser|prices|prisliste)", "destination": "/#tjenester", "permanent": true },
+    { "source": "/(about|about-us|om-oss|team)", "destination": "/#team", "permanent": true },
+    { "source": "/(contact|kontakt|kontakt-oss)", "destination": "/#kontakt", "permanent": true },
+    { "source": "/(gallery|galleri)", "destination": "/#galleri", "permanent": true },
+    { "source": "/(home|forside|blank|blog)", "destination": "/", "permanent": true },
+    { "source": "/post/:path*", "destination": "/", "permanent": true }
+  ]
+}
