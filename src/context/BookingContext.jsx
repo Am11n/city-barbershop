@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { track } from '@vercel/analytics';
 import { BOOKING_URL, canEmbedBooking } from '../config/booking';
 
 const BookingContext = createContext(null);
@@ -10,6 +11,8 @@ export function BookingProvider({ children }) {
     useEffect(() => setEmbeddable(canEmbedBooking()), []);
 
     const openBooking = useCallback(() => {
+        // Custom events show in Vercel Analytics on Pro plans; a no-op on Hobby.
+        track('Book time', { mode: embeddable ? 'drawer' : 'new-tab' });
         if (embeddable) setOpen(true);
         else window.open(BOOKING_URL, '_blank', 'noopener');
     }, [embeddable]);
