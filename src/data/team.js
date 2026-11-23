@@ -1,5 +1,5 @@
-// Placeholder team photos — swap in real photos and Instagram handles.
-const img = (id) => `https://images.unsplash.com/${id}?w=900&h=1125&auto=format&fit=crop&crop=faces&q=70`;
+// Barber photos: set `image` to a path in /public/images when the real photos arrive.
+// While `image` is null, Team.jsx shows a "photo coming" placeholder.
 
 export const team = [
     {
@@ -7,21 +7,21 @@ export const team = [
         name: 'Abdull',
         role: { no: 'Eier & master barber', en: 'Owner & master barber' },
         specialty: { no: 'Fades · Kniv', en: 'Fades · Razor work' },
-        image: img('photo-1612214070442-3c806a722f0b'),
+        image: null,
     },
     {
         id: 2,
         name: 'Yoel',
         role: { no: 'Senior barber', en: 'Senior barber' },
         specialty: { no: 'Skjegg · Teksturklipp', en: 'Beards · Textured cuts' },
-        image: img('photo-1768591981032-4a251b865ad2'),
+        image: null,
     },
     {
         id: 3,
         name: 'Ahmed',
         role: { no: 'Barber', en: 'Barber' },
         specialty: { no: 'Klassisk klipp · Barn', en: 'Classic cuts · Kids' },
-        image: img('photo-1563721572772-fbf713fff374'),
+        image: null,
     },
 ];
 

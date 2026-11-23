@@ -38,7 +38,7 @@ export const strings = {
             lead: 'Hver time følger det samme ritualet. Det er derfor kundene kommer tilbake, og derfor tar vi oss betalt for det.',
             imgAlt: 'Loungen og barberstolene i City Barbershop',
         },
-        team: { eyebrow: 'Team', h1: 'Stolene', h2: 'og', h3: 'hendene.', instagram: 'Følg på Instagram', bookWith: 'Book time hos', work: 'Arbeid fra City Barbershop' },
+        team: { eyebrow: 'Team', h1: 'Stolene', h2: 'og', h3: 'hendene.', instagram: 'Følg på Instagram', bookWith: 'Book time hos', work: 'Arbeid fra City Barbershop', photoSoon: 'Bilde kommer' },
         reviews: {
             eyebrow: 'Anmeldelser', h1: 'Kundene', h2: 'sier det', h3: 'best.',
             basedOn: 'basert på', reviewsWord: 'anmeldelser på Google',
@@ -107,7 +107,7 @@ export const strings = {
             lead: 'Every appointment follows the same ritual. That is why clients come back, and why it is worth the price.',
             imgAlt: 'The lounge and barber chairs at City Barbershop',
         },
-        team: { eyebrow: 'Team', h1: 'The chairs', h2: 'and', h3: 'the hands.', instagram: 'Follow on Instagram', bookWith: 'Book with', work: 'Work from City Barbershop' },
+        team: { eyebrow: 'Team', h1: 'The chairs', h2: 'and', h3: 'the hands.', instagram: 'Follow on Instagram', bookWith: 'Book with', work: 'Work from City Barbershop', photoSoon: 'Photo coming soon' },
         reviews: {
             eyebrow: 'Reviews', h1: 'Our clients', h2: 'say it', h3: 'best.',
             basedOn: 'based on', reviewsWord: 'reviews on Google',
