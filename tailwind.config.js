@@ -24,7 +24,6 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Anton', 'Impact', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       keyframes: {
         pole: { from: { backgroundPosition: '0 0' }, to: { backgroundPosition: '0 56px' } },

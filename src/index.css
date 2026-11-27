@@ -22,10 +22,6 @@
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
-  .eyebrow {
-    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-mute;
-  }
-
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-pole px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-pole-dark active:scale-[.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-bone/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
   }

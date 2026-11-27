@@ -13,11 +13,7 @@ export default function Contact() {
         <section id="kontakt" className="bg-coal pb-16 pt-24 sm:pb-20 sm:pt-32">
             <div className="container-x grid gap-10 lg:grid-cols-2 lg:gap-16">
                 <div className="reveal">
-                    <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('contact.eyebrow')}</span>
-                    <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
-                        {t('contact.h1')} <br />
-                        <span className="font-serif normal-case italic text-pole">{t('contact.h2')}</span>
-                    </h2>
+                    <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('contact.title')}</h2>
 
                     <div className="mt-10 grid gap-4 sm:grid-cols-2">
                         <a href={google.mapsUrl} target="_blank" rel="noreferrer" className="group rounded-3xl border border-white/10 bg-steel p-6 transition-colors hover:border-white/25">

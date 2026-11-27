@@ -12,11 +12,7 @@ export default function Team() {
             <div className="container-x">
                 <div className="reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
                     <div>
-                        <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('team.eyebrow')}</span>
-                        <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
-                            {t('team.h1')} <br className="hidden sm:block" />
-                            <span className="font-serif normal-case italic text-pole">{t('team.h2')}</span> {t('team.h3')}
-                        </h2>
+                        <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('team.title')}</h2>
                     </div>
                     <a href={instagramUrl} target="_blank" rel="noreferrer" className="btn-ghost self-start sm:self-auto">
                         <Instagram className="h-4 w-4" /> {t('team.instagram')}

@@ -9,11 +9,7 @@ export default function Faq() {
         <section id="faq" className="py-24 sm:py-32">
             <div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
                 <div className="reveal">
-                    <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('faq.eyebrow')}</span>
-                    <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
-                        {t('faq.h1')} <br />
-                        <span className="font-serif normal-case italic text-pole">{t('faq.h2')}</span>
-                    </h2>
+                    <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('faq.title')}</h2>
                 </div>
                 <div className="reveal divide-y divide-white/10 border-y border-white/10">
                     {faqs.map((f) => (
