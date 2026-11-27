@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Pause, Play } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
-import OpenStatus from './OpenStatus';
 
 // Muted montage: a pan through the salon, then a barber at work and the
 // finished fade. Portrait screens get a vertical cut. Falls back to the
@@ -87,9 +86,7 @@ export default function Hero() {
 
             <div className="container-x flex flex-1 flex-col items-center justify-center pb-16 pt-32 text-center">
                 <div className="flex max-w-4xl flex-col items-center">
-                    <OpenStatus className="animate-rise" />
-
-                    <h1 key={lang} className="animate-rise mt-5 font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
+                    <h1 key={lang} className="animate-rise font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
                         City <span className="text-pole">Barbershop</span>
                     </h1>
 
