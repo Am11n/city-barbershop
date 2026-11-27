@@ -1,76 +1,77 @@
-// Prototype prices — the live prices come from TeqBook in the booking flow.
+// Prices from the owner's price list (received 2026-11-27).
+// Durations are estimates — the live durations come from TeqBook in the booking flow.
 export const services = [
     {
-        id: 'klipp',
+        id: 'voksen',
         category: 'hair',
-        name: { no: 'Herreklipp', en: "Men's cut" },
+        name: { no: 'Voksen', en: 'Adult' },
         description: {
-            no: 'Klipp med saks og maskin, vask og styling. Tilpasset hodeform og hverdag.',
-            en: 'Scissor and clipper cut, wash and styling. Tailored to your head shape and routine.',
+            no: 'Herreklipp med saks og maskin, fade eller klassisk. Tilpasset hodeform og hverdag.',
+            en: "Men's cut with scissors and clippers, fade or classic. Tailored to your head shape and routine.",
         },
-        price: 490,
+        price: 400,
         duration: 30,
-    },
-    {
-        id: 'fade',
-        category: 'hair',
-        name: { no: 'Skin Fade', en: 'Skin Fade' },
-        description: {
-            no: 'Ren overgang helt ned til huden. Finish med kniv langs linjene.',
-            en: 'A clean blend all the way down to the skin, finished with a razor line-up.',
-        },
-        price: 550,
-        duration: 45,
         popular: true,
     },
     {
-        id: 'skjegg',
-        category: 'beard',
-        name: { no: 'Skjeggtrim', en: 'Beard trim' },
+        id: 'ungdom',
+        category: 'hair',
+        name: { no: 'Ungdom', en: 'Youth' },
         description: {
-            no: 'Forming med maskin og saks, varmt håndkle og skjeggolje.',
-            en: 'Shaped with clippers and scissors, hot towel and beard oil.',
+            no: 'Samme klipp og presisjon som voksen, til ungdomspris.',
+            en: 'The same cut and precision as adults, at a youth price.',
         },
         price: 350,
-        duration: 20,
-    },
-    {
-        id: 'combo',
-        category: 'combo',
-        name: { no: 'Klipp + skjegg', en: 'Cut + beard' },
-        description: {
-            no: 'Hele pakken: fade eller klipp, skjeggtrim og hot towel.',
-            en: 'The full package: fade or cut, beard trim and hot towel.',
-        },
-        price: 790,
-        duration: 60,
+        duration: 30,
     },
     {
         id: 'barn',
         category: 'hair',
-        name: { no: 'Barneklipp', en: 'Kids cut' },
+        name: { no: 'Barn', en: 'Kids' },
         description: {
-            no: 'For gutter under 12 år. Rolig tempo, samme presisjon.',
-            en: 'For boys under 12. Calm pace, same precision.',
+            no: 'Rolig tempo, samme presisjon.',
+            en: 'Calm pace, same precision.',
         },
-        price: 350,
+        price: 300,
         duration: 25,
     },
     {
-        id: 'barbering',
-        category: 'beard',
-        name: { no: 'Klassisk barbering', en: 'Classic shave' },
+        id: 'skjegg',
+        category: 'extra',
+        name: { no: 'Skjegg', en: 'Beard' },
         description: {
-            no: 'Kniv, varme håndklær og balsam. Gammeldags, på den gode måten.',
-            en: 'Straight razor, hot towels and balm. Old school, in the best way.',
+            no: 'Forming og trim av skjegget med maskin og saks.',
+            en: 'Beard shaping and trim with clippers and scissors.',
         },
-        price: 450,
-        duration: 30,
+        price: 250,
+        duration: 20,
+    },
+    {
+        id: 'vask',
+        category: 'extra',
+        name: { no: 'Vaske hår', en: 'Hair wash' },
+        description: {
+            no: 'Hårvask som tillegg til klippen.',
+            en: 'A hair wash added to your cut.',
+        },
+        price: 100,
+        duration: 10,
+    },
+    {
+        id: 'combo',
+        category: 'combo',
+        name: { no: 'Klipp og skjegg', en: 'Cut and beard' },
+        description: {
+            no: 'Hele pakken: klipp og skjegg i samme time.',
+            en: 'The full package: haircut and beard in one visit.',
+        },
+        price: 550,
+        duration: 45,
     },
 ];
 
 export const serviceCategories = [
-    { id: 'hair', name: { no: 'Hår', en: 'Hair' } },
-    { id: 'beard', name: { no: 'Skjegg & barbering', en: 'Beard & shave' } },
+    { id: 'hair', name: { no: 'Klipp', en: 'Haircuts' } },
+    { id: 'extra', name: { no: 'Skjegg & tillegg', en: 'Beard & extras' } },
     { id: 'combo', name: { no: 'Kombo', en: 'Combo' } },
 ];

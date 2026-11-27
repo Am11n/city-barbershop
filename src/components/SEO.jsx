@@ -9,11 +9,11 @@ export const SITE = 'https://www.citybarbershop.no';
 const meta = {
     no: {
         title: 'Barber i Drammen sentrum | City Barbershop',
-        description: 'Barbershop i Tollbugata 14, Drammen. Skin fade, herreklipp, skjeggtrim og barbering fra 350 kr. 5,0 på Google. Book time på nett.',
+        description: 'Barbershop i Tollbugata 14, Drammen. Fades, herreklipp og skjegg. Klipp fra 400 kr. 5,0 på Google. Book time på nett.',
     },
     en: {
         title: 'Barber in central Drammen | City Barbershop',
-        description: 'Barbershop at Tollbugata 14, Drammen. Skin fades, haircuts, beard trims and shaves from 350 NOK. Rated 5.0 on Google. Book online.',
+        description: 'Barbershop at Tollbugata 14, Drammen. Fades, haircuts and beard trims. Haircuts from 400 NOK. Rated 5.0 on Google. Book online.',
     },
 };
 
