@@ -8,7 +8,16 @@ export function BookingProvider({ children }) {
     const [open, setOpen] = useState(false);
     // Decided after mount so the prerendered HTML matches the first client render.
     const [embeddable, setEmbeddable] = useState(false);
-    useEffect(() => setEmbeddable(canEmbedBooking()), []);
+    useEffect(() => {
+        const canEmbed = canEmbedBooking();
+        setEmbeddable(canEmbed);
+        // Old Wix links (/book-online) redirect to /#booking: open the booking straight away.
+        if (window.location.hash === '#booking') {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+            if (canEmbed) setOpen(true);
+            else window.location.assign(BOOKING_URL);
+        }
+    }, []);
 
     const openBooking = useCallback(() => {
         // Custom events show in Vercel Analytics on Pro plans; a no-op on Hobby.

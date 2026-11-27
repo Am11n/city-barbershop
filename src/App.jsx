@@ -4,8 +4,6 @@ import Services from './components/Services';
 import Gallery from './components/Gallery';
 import Team from './components/Team';
 import Reviews from './components/Reviews';
-import Booking from './components/Booking';
-import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
@@ -30,8 +28,6 @@ function Page() {
         <Team />
         <Gallery />
         <Reviews />
-        <Booking />
-        <Faq />
         <Contact />
       </main>
       <Footer />
