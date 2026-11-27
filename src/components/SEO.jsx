@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import { faqs } from '../data/content';
 import { facebookUrl, google, hours, instagramUrl } from '../data/team';
 import { services } from '../data/services';
 import { useLang } from '../i18n/LanguageContext';
@@ -81,23 +80,12 @@ export default function SEO() {
         publisher: { '@id': `${SITE}/#barbershop` },
     };
 
-    const faqSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqs.map((f) => ({
-            '@type': 'Question',
-            name: L(f.q),
-            acceptedAnswer: { '@type': 'Answer', text: L(f.a) },
-        })),
-    };
-
     return (
         <Helmet>
             <title>{meta[lang].title}</title>
             <meta name="description" content={meta[lang].description} />
             <script type="application/ld+json">{JSON.stringify(business)}</script>
             <script type="application/ld+json">{JSON.stringify(website)}</script>
-            <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         </Helmet>
     );
 }
