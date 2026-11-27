@@ -41,10 +41,7 @@ export default function Services() {
             <div className="container-x">
                 <div className="reveal grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
                     <div>
-                        <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('services.eyebrow')}</span>
-                        <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
-                            {t('services.h1')} <span className="font-serif normal-case italic text-pole">{t('services.h2')}</span> {t('services.h3')}
-                        </h2>
+                        <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('services.title')}</h2>
                     </div>
                     <p className="max-w-md text-bone/65 lg:justify-self-end">{t('services.lead')}</p>
                 </div>

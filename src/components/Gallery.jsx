@@ -17,10 +17,7 @@ export default function Gallery() {
         <section id="galleri" className="overflow-hidden py-24 sm:py-32">
             <div className="container-x reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
                 <div>
-                    <span className="eyebrow"><span className="h-px w-8 bg-pole" /> {t('gallery.eyebrow')}</span>
-                    <h2 className="mt-5 font-display text-5xl uppercase leading-[0.9] sm:text-7xl">
-                        {t('gallery.h1')} <span className="font-serif normal-case italic text-pole">{t('gallery.h2')}</span>
-                    </h2>
+                    <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('gallery.title')}</h2>
                     <p className="mt-4 max-w-md text-bone/65">{t('gallery.lead')}</p>
                 </div>
                 <div className="flex items-center gap-2">
