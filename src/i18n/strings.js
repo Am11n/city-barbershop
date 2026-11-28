@@ -2,7 +2,7 @@
 export const strings = {
     no: {
         nav: { services: 'Tjenester', team: 'Team', gallery: 'Galleri', reviews: 'Anmeldelser', contact: 'Finn oss', call: 'Ring oss', book: 'Book time', menuOpen: 'Åpne meny', menuClose: 'Lukk meny', toTop: 'City Barbershop, til toppen' },
-        status: { openNow: 'Åpent nå · stenger', closedOpens: 'Stengt · åpner', tomorrow: 'i morgen', closed: 'Stengt', days: ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'] },
+        status: { closed: 'Stengt' },
         hero: {
             lead: 'Herreklipp, fades og skjegg i Tollbugata 14. Book på nett, eller kom innom når det er ledig.',
             cta: 'Book time nå', prices: 'Se priser',
@@ -42,7 +42,7 @@ export const strings = {
     },
     en: {
         nav: { services: 'Services', team: 'Team', gallery: 'Gallery', reviews: 'Reviews', contact: 'Visit', call: 'Call us', book: 'Book now', menuOpen: 'Open menu', menuClose: 'Close menu', toTop: 'City Barbershop, back to top' },
-        status: { openNow: 'Open now · closes', closedOpens: 'Closed · opens', tomorrow: 'tomorrow', closed: 'Closed', days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
+        status: { closed: 'Closed' },
         hero: {
             lead: "Men's cuts, fades and beards at Tollbugata 14. Book online, or drop in when there's a free chair.",
             cta: 'Book now', prices: 'See prices',

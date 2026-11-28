@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { MapPin, Phone, Clock, Navigation, Info } from 'lucide-react';
 import { hours, fmtTime, google } from '../data/team';
 import { useLang } from '../i18n/LanguageContext';
-import OpenStatus from './OpenStatus';
 
 export default function Contact() {
     const { t, L } = useLang();
@@ -35,10 +34,7 @@ export default function Contact() {
                             </span>
                         </a>
                         <div className="rounded-3xl border border-white/10 bg-steel p-6 sm:col-span-2">
-                            <div className="flex flex-wrap items-center justify-between gap-3">
-                                <Clock className="h-5 w-5 text-pole" />
-                                <OpenStatus />
-                            </div>
+                            <Clock className="h-5 w-5 text-pole" />
                             <p className="mt-6 text-xs uppercase tracking-widest text-mute">{t('contact.hours')}</p>
                             <ul className="mt-3 divide-y divide-white/10">
                                 {hours.map((h) => {
