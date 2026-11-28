@@ -12,7 +12,7 @@ export const strings = {
         services: {
             title: 'Priser',
             lead: 'Trykk på en tjeneste for å booke. Du velger barber i neste steg.',
-            popular: 'Mest booket', min: 'min', currency: 'kr', count: 'tjenester', bestValue: 'Mest for pengene',
+            popular: 'Mest booket', min: 'min', currency: 'kr', bestValue: 'Mest for pengene',
             note: 'Ledige tider ser du når du booker.',
         },
         gallery: {
@@ -23,8 +23,8 @@ export const strings = {
         reviews: {
             title: 'Anmeldelser',
             basedOn: 'basert på', reviewsWord: 'anmeldelser på Google',
-            seeAll: 'Les alle på Google', write: 'Skriv en anmeldelse',
-            source: 'Anmeldelser hentet direkte fra Google', readOn: 'Les på Google',
+            seeAll: 'Les alle på Google',
+            readOn: 'Les på Google',
         },
         booking: {
             loading: 'Henter ledige tider…',
@@ -52,7 +52,7 @@ export const strings = {
         services: {
             title: 'Prices',
             lead: 'Tap a service to book. You choose your barber in the next step.',
-            popular: 'Most booked', min: 'min', currency: 'NOK', count: 'services', bestValue: 'Best value',
+            popular: 'Most booked', min: 'min', currency: 'NOK', bestValue: 'Best value',
             note: 'You see open slots when you book.',
         },
         gallery: {
@@ -63,8 +63,8 @@ export const strings = {
         reviews: {
             title: 'Reviews',
             basedOn: 'based on', reviewsWord: 'reviews on Google',
-            seeAll: 'Read all on Google', write: 'Write a review',
-            source: 'Reviews pulled directly from Google', readOn: 'Read on Google',
+            seeAll: 'Read all on Google',
+            readOn: 'Read on Google',
         },
         booking: {
             loading: 'Loading available times…',

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Pause, Play } from 'lucide-react';
+import { Pause, Play } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -37,7 +37,7 @@ export default function Hero() {
     const [started, setStarted] = useState(false);
 
     return (
-        <section id="top" className="grain relative isolate flex min-h-[100svh] flex-col overflow-hidden">
+        <section id="top" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
             <div className="absolute inset-0 -z-10">
                 {/* The still is the first paint (and LCP); the video fades in over it once it plays. */}
                 <img
@@ -66,12 +66,8 @@ export default function Hero() {
                         onPause={() => video.setPlaying(false)}
                     />
                 )}
-                {/* Barber-pole red tint across the whole hero */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(224,38,47,.2)] via-[rgba(224,38,47,.2)] to-transparent" />
-                {/* Light at the top so the video shows; dark at the bottom where the text sits */}
-                <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink/70 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_center,rgba(11,11,12,.6),transparent)]" />
+                <div className="absolute inset-0 bg-ink/45" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
             </div>
 
             {video.enabled && (
@@ -86,18 +82,18 @@ export default function Hero() {
 
             <div className="container-x flex flex-1 flex-col items-center justify-center pb-16 pt-32 text-center">
                 <div className="flex max-w-4xl flex-col items-center">
-                    <h1 key={lang} className="animate-rise font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]" style={{ animationDelay: '.08s' }}>
+                    <h1 key={lang} className="font-display text-[15vw] uppercase leading-[0.9] tracking-tight sm:text-[9vw] lg:text-[7.5rem]">
                         City <span className="text-pole">Barbershop</span>
                     </h1>
 
-                    <div className="animate-rise mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row" style={{ animationDelay: '.2s' }}>
+                    <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
                         <button onClick={openBooking} className="btn-primary px-7 py-3.5 text-base">
-                            {t('hero.cta')} <ArrowUpRight className="h-5 w-5" />
+                            {t('hero.cta')}
                         </button>
                         <a href="#tjenester" className="btn-ghost px-7 py-3.5 text-base">{t('hero.prices')}</a>
                     </div>
 
-                    <p className="animate-rise mt-6 max-w-md text-base leading-relaxed text-bone/80 sm:text-lg" style={{ animationDelay: '.3s' }}>
+                    <p className="mt-6 max-w-md text-base leading-relaxed text-bone/80 sm:text-lg">
                         {t('hero.lead')}
                     </p>
                 </div>

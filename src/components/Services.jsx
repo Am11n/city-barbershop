@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { services, serviceCategories } from '../data/services';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
@@ -39,26 +39,17 @@ export default function Services() {
     return (
         <section id="tjenester" className="py-24 sm:py-32">
             <div className="container-x">
-                <div className="reveal grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
+                <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
                     <div>
                         <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('services.title')}</h2>
                     </div>
                     <p className="max-w-md text-bone/65 lg:justify-self-end">{t('services.lead')}</p>
                 </div>
 
-                <div className="mt-14 grid gap-5 lg:grid-cols-3">
-                    {serviceCategories.filter((c) => c.id !== 'combo').map((c, i) => (
-                        <div
-                            key={c.id}
-                            className="reveal rounded-[2rem] border border-white/10 bg-coal p-6 sm:p-8"
-                            style={{ transitionDelay: `${i * 80}ms` }}
-                        >
-                            <h3 className="flex items-center justify-between font-display text-3xl uppercase tracking-wide">
-                                {L(c.name)}
-                                <span className="text-sm font-sans font-medium normal-case tracking-normal text-mute">
-                                    {byCat(c.id).length} {t('services.count')}
-                                </span>
-                            </h3>
+                <div className="mt-14 grid gap-x-10 gap-y-12 lg:grid-cols-3">
+                    {serviceCategories.filter((c) => c.id !== 'combo').map((c) => (
+                        <div key={c.id} className="border-t border-white/20 pt-6">
+                            <h3 className="font-display text-3xl uppercase tracking-wide">{L(c.name)}</h3>
                             <ul className="mt-4 divide-y divide-white/10">
                                 {byCat(c.id).map((s) => <ServiceRow key={s.id} s={s} onBook={openBooking} t={t} L={L} />)}
                             </ul>
@@ -68,8 +59,7 @@ export default function Services() {
                     {combo && (
                         <button
                             onClick={openBooking}
-                            className="reveal group relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[2rem] border border-white/10 p-6 text-left sm:p-8"
-                            style={{ transitionDelay: '160ms' }}
+                            className="group relative isolate flex min-h-[420px] flex-col justify-end overflow-hidden rounded-xl p-6 text-left sm:p-8"
                         >
                             <img
                                 src="/images/craft-skjegg.webp"
@@ -91,15 +81,12 @@ export default function Services() {
                                         <Clock className="h-3.5 w-3.5" /> {combo.duration} {t('services.min')}
                                     </span>
                                 </span>
-                                <span className="grid h-12 w-12 place-items-center rounded-full bg-bone text-ink transition-all group-hover:rotate-45 group-hover:bg-pole group-hover:text-white">
-                                    <ArrowUpRight className="h-5 w-5" />
-                                </span>
                             </span>
                         </button>
                     )}
                 </div>
 
-                <p className="reveal mt-6 text-center text-xs text-mute">{t('services.note')}</p>
+                <p className="mt-6 text-center text-xs text-mute">{t('services.note')}</p>
             </div>
         </section>
     );
