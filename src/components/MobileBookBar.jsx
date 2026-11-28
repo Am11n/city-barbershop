@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -25,7 +25,7 @@ export default function MobileBookBar() {
                 <Phone className="h-5 w-5" />
             </a>
             <button onClick={openBooking} className="btn-primary flex-1 py-3">
-                {t('nav.book')} <ArrowUpRight className="h-4 w-4" />
+                {t('nav.book')}
             </button>
         </div>
     );

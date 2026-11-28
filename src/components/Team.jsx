@@ -1,4 +1,4 @@
-import { ArrowUpRight, Camera, Instagram } from 'lucide-react';
+import { Camera, Instagram } from 'lucide-react';
 import { team, instagramUrl } from '../data/team';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
@@ -10,7 +10,7 @@ export default function Team() {
     return (
         <section id="team" className="relative overflow-hidden bg-coal py-24 sm:py-32">
             <div className="container-x">
-                <div className="reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+                <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
                     <div>
                         <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('team.title')}</h2>
                     </div>
@@ -20,11 +20,10 @@ export default function Team() {
                 </div>
 
                 <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {team.map((m, i) => (
+                    {team.map((m) => (
                         <article
                             key={m.id}
-                            className="reveal group relative aspect-[4/5] overflow-hidden rounded-3xl bg-steel"
-                            style={{ transitionDelay: `${i * 90}ms` }}
+                            className="group relative aspect-[4/5] overflow-hidden rounded-xl bg-steel"
                         >
                             {m.image ? (
                                 <img
@@ -34,24 +33,24 @@ export default function Team() {
                                     className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                                 />
                             ) : (
-                                <div className="absolute inset-x-3 top-3 bottom-36 flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-bone/20 text-bone/40">
+                                <div className="absolute inset-x-3 top-3 bottom-36 flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-bone/20 text-bone/40">
                                     <Camera className="h-10 w-10" strokeWidth={1.25} aria-hidden="true" />
-                                    <span className="text-xs uppercase tracking-[0.2em]">{t('team.photoSoon')}</span>
+                                    <span className="text-sm">{t('team.photoSoon')}</span>
                                 </div>
                             )}
                             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
                             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
                                 <div>
-                                    <p className="text-xs uppercase tracking-[0.2em] text-pole">{L(m.role)}</p>
-                                    <h3 className="mt-1 font-display text-4xl uppercase">{m.name}</h3>
-                                    <p className="mt-1 text-sm text-bone/70">{L(m.specialty)}</p>
+                                    <h3 className="font-display text-4xl uppercase">{m.name}</h3>
+                                    <p className="mt-1 text-sm text-bone/80">{L(m.role)}</p>
+                                    <p className="text-sm text-bone/55">{L(m.specialty)}</p>
                                 </div>
                                 <button
                                     onClick={openBooking}
                                     aria-label={`${t('team.bookWith')} ${m.name}`}
-                                    className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-bone text-ink transition-all group-hover:bg-pole group-hover:text-white"
+                                    className="shrink-0 rounded-full bg-bone px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-pole hover:text-white"
                                 >
-                                    <ArrowUpRight className="h-5 w-5" />
+                                    {t('nav.book')}
                                 </button>
                             </div>
                         </article>

@@ -15,7 +15,7 @@ export default function Gallery() {
 
     return (
         <section id="galleri" className="overflow-hidden py-24 sm:py-32">
-            <div className="container-x reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <div className="container-x flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
                 <div>
                     <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('gallery.title')}</h2>
                     <p className="mt-4 max-w-md text-bone/65">{t('gallery.lead')}</p>
@@ -35,7 +35,7 @@ export default function Gallery() {
 
             <ul
                 ref={track}
-                className="reveal mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:px-6 lg:px-[max(2rem,calc((100vw-80rem)/2+2rem))] [&::-webkit-scrollbar]:hidden"
+                className="mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:px-6 lg:px-[max(2rem,calc((100vw-80rem)/2+2rem))] [&::-webkit-scrollbar]:hidden"
             >
                 {gallery.map((src, i) => (
                     <li key={src} className="shrink-0 snap-start">
@@ -43,7 +43,7 @@ export default function Gallery() {
                             src={src}
                             alt={`${t('team.work')} ${i + 1}`}
                             loading="lazy"
-                            className="h-80 w-64 rounded-3xl object-cover sm:h-[26rem] sm:w-80"
+                            className="h-80 w-64 rounded-xl object-cover sm:h-[26rem] sm:w-80"
                         />
                     </li>
                 ))}

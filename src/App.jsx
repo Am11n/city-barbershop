@@ -12,11 +12,8 @@ import MobileBookBar from './components/MobileBookBar';
 import ScrollPole from './components/ScrollPole';
 import { BookingProvider } from './context/BookingContext';
 import { LanguageProvider } from './i18n/LanguageContext';
-import useReveal from './hooks/useReveal';
 
 function Page() {
-  useReveal();
-
   return (
     <div className="min-h-screen bg-ink text-bone">
       <SEO />

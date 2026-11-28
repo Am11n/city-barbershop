@@ -37,7 +37,7 @@ export default function Footer() {
                         href="https://fikir.no"
                         target="_blank"
                         rel="noopener"
-                        className="group inline-flex items-center gap-3 text-xs uppercase tracking-widest text-mute transition-colors hover:text-bone"
+                        className="group inline-flex items-center gap-3 text-xs text-mute transition-colors hover:text-bone"
                     >
                         Developed by
                         <img

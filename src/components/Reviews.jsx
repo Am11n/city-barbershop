@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Star, ArrowUpRight, PenLine } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { useLang } from '../i18n/LanguageContext';
 import { google } from '../data/team';
 import { featuredReviews } from '../data/reviews';
@@ -51,15 +51,10 @@ export default function Reviews() {
     return (
         <section id="anmeldelser" className="relative overflow-hidden pb-24 pt-16 sm:pb-32 sm:pt-20">
             <div className="container-x">
-                <div className="reveal">
-                    <div>
-                        <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('reviews.title')}</h2>
-                    </div>
-
-                </div>
+                <h2 className="font-display text-5xl uppercase leading-[0.9] sm:text-7xl">{t('reviews.title')}</h2>
 
                 {reviews.length > 0 && (
-                    <div className="reveal mt-14 grid gap-5 md:grid-cols-3">
+                    <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
                         {reviews.map((r, i) => (
                             <a
                                 key={`${r.author}-${i}`}
@@ -67,40 +62,32 @@ export default function Reviews() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label={`${t('reviews.readOn')}: ${r.author}`}
-                                className="group flex flex-col rounded-[2rem] border border-white/10 bg-steel p-7 transition-colors hover:border-white/25"
+                                className="flex flex-col border-t border-white/20 pt-6"
                             >
                                 <div className="flex items-center justify-between">
                                     <Stars value={r.rating} />
                                     <span className="text-xs text-mute">{r.when}</span>
                                 </div>
-                                <blockquote className="mt-5 flex-1 text-bone/85 [display:-webkit-box] [-webkit-line-clamp:7] [-webkit-box-orient:vertical] overflow-hidden">
+                                <blockquote className="mt-4 flex-1 text-bone/85 [display:-webkit-box] [-webkit-line-clamp:7] [-webkit-box-orient:vertical] overflow-hidden">
                                     “{r.text}”
                                 </blockquote>
-                                <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                                <div className="mt-5 flex items-center gap-3">
                                     {r.photo ? (
                                         <img src={r.photo} alt="" referrerPolicy="no-referrer" className="h-9 w-9 rounded-full object-cover" />
                                     ) : (
                                         <span className="grid h-9 w-9 place-items-center rounded-full bg-pole font-semibold">{r.author[0]}</span>
                                     )}
-                                    <span className="min-w-0 flex-1">
-                                        <span className="block truncate font-semibold">{r.author}</span>
-                                        <span className="text-xs text-mute">{t('reviews.readOn')}</span>
-                                    </span>
-                                    <ArrowUpRight className="h-5 w-5 shrink-0 text-mute transition-transform group-hover:rotate-45 group-hover:text-bone" />
+                                    <span className="min-w-0 truncate font-semibold">{r.author}</span>
                                 </div>
                             </a>
                         ))}
                     </div>
                 )}
 
-                <div className="reveal mt-10 flex flex-wrap items-center gap-3">
+                <div className="mt-10 flex flex-wrap items-center gap-3">
                     <a href={url} target="_blank" rel="noreferrer" className="btn-ghost">
-                        <GoogleG /> {t('reviews.seeAll')} <ArrowUpRight className="h-4 w-4" />
+                        <GoogleG /> {t('reviews.seeAll')}
                     </a>
-                    <a href={url} target="_blank" rel="noreferrer" className="btn-ghost">
-                        <PenLine className="h-4 w-4" /> {t('reviews.write')}
-                    </a>
-                    {reviews.length > 0 && <span className="text-xs text-mute">{t('reviews.source')}</span>}
                 </div>
             </div>
         </section>

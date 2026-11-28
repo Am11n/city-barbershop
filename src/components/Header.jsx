@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, ArrowUpRight, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -76,7 +76,7 @@ export default function Header() {
                         <Phone className="h-4 w-4" />
                     </a>
                     <button onClick={openBooking} className="btn-primary hidden px-5 py-2.5 sm:inline-flex">
-                        {t('nav.book')} <ArrowUpRight className="h-4 w-4" />
+                        {t('nav.book')}
                     </button>
                     <button
                         className="grid h-11 w-11 place-items-center rounded-full border border-white/10 lg:hidden"
@@ -100,10 +100,9 @@ export default function Header() {
                             key={item.href}
                             href={item.href}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center justify-between rounded-2xl px-4 py-4 font-display text-2xl uppercase tracking-wide hover:bg-white/5"
+                            className="rounded-xl px-4 py-4 font-display text-2xl uppercase tracking-wide hover:bg-white/5"
                         >
                             {item.name}
-                            <ArrowUpRight className="h-5 w-5 text-mute" />
                         </a>
                     ))}
                     <div className="flex items-center justify-between px-4 py-3">
